@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Immo+ — Moins d’administratif. Plus de rentabilité.</title>
+  <meta name="description" content="Immo+ centralise biens, locataires, loyers et travaux. L’IA propose, vous validez. Conçu pour les agences, promoteurs et syndics d’Afrique.">
+  <meta name="theme-color" content="#fefae0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23283618'/%3E%3Cpath d='M7 15.2 16 7.8l9 7.4M9.8 14.2V24h12.4v-9.8' fill='none' stroke='%23fefae0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 17.2v4.6M13.7 19.5h4.6' stroke='%23dda15e' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <script src="assets/js/icons.js"></script>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ============================== EN-TÊTE ============================== -->
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="Immo+ — accueil">
+        <svg class="logo__svg" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span class="logo__word">Immo<b>+</b></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <div class="dropdown dropdown--hover" data-dropdown>
+          <button class="nav__link" type="button" aria-haspopup="menu" aria-expanded="false" data-dropdown-toggle>
+            Pour qui ? <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          </button>
+          <div class="dropdown__menu" role="menu">
+            <a class="dropdown__item" role="menuitem" href="#pour-qui" data-tab-open="p-agences">
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+              <span>Agences immobilières<small>Gérance, location, vente</small></span>
+            </a>
+            <a class="dropdown__item" role="menuitem" href="#pour-qui" data-tab-open="p-promoteurs">
+              <span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+              <span>Promoteurs<small>Programmes, lots, acheteurs</small></span>
+            </a>
+            <a class="dropdown__item" role="menuitem" href="#pour-qui" data-tab-open="p-syndics">
+              <span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <span>Syndics &amp; copropriétés<small>Charges, travaux, assemblées</small></span>
+            </a>
+            <a class="dropdown__item" role="menuitem" href="#pour-qui" data-tab-open="p-proprios">
+              <span class="icon-tile icon-tile--forest"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg></span>
+              <span>Propriétaires bailleurs<small>Patrimoine, rendement</small></span>
+            </a>
+          </div>
+        </div>
+        <a class="nav__link" href="#fonctions">Fonctions</a>
+        <a class="nav__link" href="fonctionnalites.html">Loyers &amp; paiements</a>
+        <a class="nav__link" href="#faq">Questions</a>
+        <a class="btn btn--primary btn--sm nav__cta-mobile" href="#demo">Demander une démo</a>
+      </nav>
+      <div class="site-header__cta"><a class="btn btn--primary btn--sm" href="#demo">Demander une démo</a></div>
+      <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon--close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero grain" id="top">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--a" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--b" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <p class="eyebrow hero-in" style="--i:0">Le cockpit de la gestion immobilière</p>
+        <h1 class="hero__title hero-in" style="--i:1">
+          <span class="line">Moins d’administratif.</span>
+          <span class="line">Plus de <span class="mark">rentabilité</span>.</span>
+        </h1>
+        <p class="hero__lead hero-in" style="--i:2">Loyers encaissés, biens occupés, travaux suivis : vous le voyez d’un coup d’œil. L’IA propose, vous validez.</p>
+        <div class="hero__actions hero-in" style="--i:3">
+          <a class="btn btn--primary btn--lg" href="#demo">Demander une démo</a>
+          <a class="btn btn--link" href="#vision">Découvrir <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Mascotte : illustration d'immeuble qui flotte -->
+      <div class="mascot hero-in" style="--i:5" data-mascot aria-hidden="true">
+        <div class="mascot__float"><img src="assets/img/mascot.png" alt="" width="100" height="100" decoding="async"></div>
+        <span class="mascot__shadow"></span>
+      </div>
+
+      <!-- Dunes / collines (5 couches, du plus clair au plus sombre) -->
+      <div class="waves" aria-hidden="true">
+        <div class="wave wave--1" data-speed="0.14"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#edcda6" fill-opacity=".8" d="M0 120C180 70 340 40 560 78c240 42 420 72 640 22 120-28 190-40 240-30v230H0z"/></svg></div>
+        <div class="wave wave--2" data-speed="0.1"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#e5b782" d="M0 150c220-40 420-60 640-22 220 38 420 48 620 0 90-22 140-28 180-24v216H0z"/></svg></div>
+        <div class="wave wave--3" data-speed="0.07"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#929a74" d="M0 130c200 38 400 50 620 20 240-34 420-50 620-12 100 20 160 22 200 12v170H0z"/></svg></div>
+        <div class="wave wave--4" data-speed="0.04"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#606c38" d="M0 170c240-30 460-42 700-10 240 32 420 30 600 0 70-12 110-14 140-10v170H0z"/></svg></div>
+        <div class="wave wave--5"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#283618" d="M0 200c260-30 520-40 760-16 240 24 440 22 680-6v142H0z"/></svg></div>
+      </div>
+    </section>
+
+    <!-- ============================== VISION (bandeau sombre) ============================== -->
+    <section class="statement" id="vision">
+      <div class="statement__glow" aria-hidden="true"></div>
+      <div class="container">
+        <h2 data-reveal>Tout votre portefeuille, enfin au même endroit.</h2>
+        <p class="statement__lead" data-reveal style="--i:1">Immo+ centralise la gestion des biens, des locataires, des loyers et des travaux. Moins d’administratif, plus de temps pour vos clients.</p>
+        <div class="pillars">
+          <div class="pillar" data-reveal style="--i:0" data-inview><span class="num">01</span><h3>Immo+ centralise.</h3><p>Un seul endroit pour tout ce qui fait tourner votre parc immobilier.</p></div>
+          <div class="pillar" data-reveal style="--i:1" data-inview><span class="num">02</span><h3>Les agents IA proposent.</h3><p>Relances, révisions de loyer, planning de travaux : à partir de vos données.</p></div>
+          <div class="pillar" data-reveal style="--i:2" data-inview><span class="num">03</span><h3>Vous validez.</h3><p>Rien ne se décide sans vos équipes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FONCTIONS ============================== -->
+    <section class="section bg-grid" id="fonctions">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Tout ce qu’il faut pour piloter votre parc immobilier.</h2>
+        </div>
+        <div class="features" data-stagger>
+          <article class="feature">
+            <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+            <h3>Loyers et paiements</h3>
+            <p>Appels de loyer, paiements Mobile Money et quittances : le suivi est automatique, les impayés ressortent tout de suite.</p>
+            <a class="btn btn--link" href="fonctionnalites.html">En savoir plus <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+          </article>
+          <article class="feature">
+            <span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+            <h3>Biens et lots</h3>
+            <p>Immeubles, villas, lots et programmes : état d’occupation, vacance et historique de chaque bien, en temps réel.</p>
+          </article>
+          <article class="feature">
+            <span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span>
+            <h3>Locataires et baux</h3>
+            <p>Contrats, états des lieux, pièces justificatives, avec des alertes avant chaque échéance de bail.</p>
+          </article>
+          <article class="feature">
+            <span class="icon-tile icon-tile--forest"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+            <h3>Travaux et maintenance</h3>
+            <p>Demandes d’intervention, devis, artisans et suivi des chantiers, du signalement à la facture.</p>
+          </article>
+          <article class="feature">
+            <span class="icon-tile icon-tile--mix"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+            <h3>Un assistant qui répond</h3>
+            <p>« Quels loyers sont en retard à Cocody ? », « Quels baux arrivent à échéance ? » : posez la question, il cherche pour vous.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== POUR QUI ============================== -->
+    <section class="section" id="pour-qui" style="padding-top:0">
+      <div class="container" data-tabs>
+        <div class="section-head" data-reveal style="margin-bottom:2rem">
+          <h2>Une plateforme. Chaque équipe y trouve sa place.</h2>
+        </div>
+        <div class="tabs" aria-label="Profils" data-reveal>
+          <button class="tabs__tab" type="button" aria-selected="true" aria-controls="p-agences">Agences</button>
+          <button class="tabs__tab" type="button" aria-selected="false" aria-controls="p-promoteurs">Promoteurs</button>
+          <button class="tabs__tab" type="button" aria-selected="false" aria-controls="p-syndics">Syndics &amp; copropriétés</button>
+          <button class="tabs__tab" type="button" aria-selected="false" aria-controls="p-proprios">Propriétaires</button>
+        </div>
+
+        <div class="tabpanel" id="p-agences" data-inview>
+          <div class="persona">
+            <div>
+              <span class="eyebrow">Agences immobilières</span>
+              <h3 class="mt-2">Gérez 10 ou 1 000 biens avec la même équipe.</h3>
+              <p>Moins de saisie, plus de suivi : loyers, relances et comptes rendus de gérance se préparent tout seuls.</p>
+              <ul>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Quittances et relances générées automatiquement</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Comptes rendus de gérance envoyés aux propriétaires</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Un portail dédié pour chaque propriétaire</li>
+              </ul>
+            </div>
+            <div class="persona__visual">
+              <div class="mini"><div class="mini__label">Loyers encaissés ce mois</div><div class="mini__value">48,2 M<small>FCFA</small></div>
+                <div class="mini-bars" aria-hidden="true"><i style="--h:42%;--k:0"></i><i style="--h:58%;--k:1"></i><i style="--h:50%;--k:2"></i><i style="--h:72%;--k:3"></i><i style="--h:64%;--k:4"></i><i style="--h:84%;--k:5"></i><i style="--h:100%;--k:6"></i></div></div>
+              <div class="mini mini--row"><span class="avatar avatar--olive">AD</span><div><strong>Relance envoyée sur WhatsApp</strong><span>Aminata D. · Apt B12, Cocody</span></div><span class="badge badge--success badge--dot">Envoyée</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="p-promoteurs" data-inview hidden>
+          <div class="persona">
+            <div>
+              <span class="eyebrow">Promoteurs</span>
+              <h3 class="mt-2">Du programme à la remise des clés.</h3>
+              <p>Suivez chaque lot, chaque acheteur et chaque échéance de paiement, sans tableur à rapprocher.</p>
+              <ul>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Lots disponibles, réservés et vendus en un coup d’œil</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Échéanciers de paiement et appels de fonds</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Avancement du chantier partagé avec les acheteurs</li>
+              </ul>
+            </div>
+            <div class="persona__visual persona__visual--terracotta">
+              <div class="mini"><div class="mini__label">Programme « Horizon Park » · lots vendus</div><div class="mini__value">38 <small>sur 52 lots</small></div>
+                <div class="progress progress--accent mt-4"><div class="progress__bar" style="--value:73%"></div></div></div>
+              <div class="mini mini--row"><span class="icon-tile icon-tile--terracotta" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg></span><div><strong>Appel de fonds n°3</strong><span>24 acheteurs · échéance 30 nov.</span></div><span class="badge badge--warning badge--dot">En cours</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="p-syndics" data-inview hidden>
+          <div class="persona">
+            <div>
+              <span class="eyebrow">Syndics &amp; copropriétés</span>
+              <h3 class="mt-2">Charges, assemblées, travaux : tout est tracé.</h3>
+              <p>Les copropriétaires voient où va leur argent, le syndic gagne des heures chaque semaine.</p>
+              <ul>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Appels de charges calculés par tantièmes</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Interventions suivies de la demande à la facture</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Procès-verbaux et documents partagés</li>
+              </ul>
+            </div>
+            <div class="persona__visual persona__visual--olive">
+              <div class="mini mini--row"><span class="icon-tile icon-tile--olive" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span><div><strong>Ascenseur bloc B</strong><span>Intervention planifiée demain, 9 h</span></div><span class="badge badge--info badge--dot">Planifiée</span></div>
+              <div class="mini mini--row"><span class="icon-tile" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg></span><div><strong>Charges T4 — 86 lots</strong><span>78 réglées · 8 en attente</span></div><span class="badge badge--success badge--dot">91 %</span></div>
+              <div class="mini mini--row"><span class="icon-tile icon-tile--forest" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><div><strong>Assemblée générale</strong><span>Convocations envoyées</span></div><span class="badge badge--outline">12 déc.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="p-proprios" data-inview hidden>
+          <div class="persona">
+            <div>
+              <span class="eyebrow">Propriétaires bailleurs</span>
+              <h3 class="mt-2">Votre patrimoine, en un coup d’œil.</h3>
+              <p>Que vous gériez seul ou avec une agence, sachez à tout moment ce que rapporte chaque bien.</p>
+              <ul>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Rendement net par bien et pour l’ensemble du patrimoine</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Alertes avant la fin de chaque bail</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Travaux, factures et justificatifs centralisés</li>
+              </ul>
+            </div>
+            <div class="persona__visual persona__visual--mix">
+              <div class="mini"><div class="mini__label">Rendement net du patrimoine</div><div class="mini__value">7,4 <small>% / an</small></div>
+                <div class="mini-bars" aria-hidden="true"><i style="--h:60%;--k:0"></i><i style="--h:66%;--k:1"></i><i style="--h:62%;--k:2"></i><i style="--h:78%;--k:3"></i><i style="--h:74%;--k:4"></i><i style="--h:92%;--k:5"></i></div></div>
+              <div class="mini mini--row"><span class="icon-tile icon-tile--terracotta" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><div><strong>Villa Angré — bail à renouveler</strong><span>Échéance dans 45 jours</span></div><span class="badge badge--warning">45 j</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PARTENAIRES ============================== -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Devenez l’une de nos premières agences partenaires.</h2>
+        </div>
+        <div class="partner-cards" data-stagger>
+          <article class="partner-card card--tint-mix" style="background:var(--grad-olive)"><span class="num">01</span><h3>Démarrez par votre priorité</h3><p>Loyers et quittances, suivi des biens, travaux : on commence par ce qui vous fait perdre le plus de temps, sans tout migrer d’un coup.</p></article>
+          <article class="partner-card" style="background:var(--grad-terracotta)"><span class="num">02</span><h3>Un produit construit avec vous</h3><p>Vos retours orientent la suite. Vous accédez en priorité aux nouveautés, dont l’assistant IA.</p></article>
+          <article class="partner-card" style="background:var(--grad-sand)"><span class="num">03</span><h3>Un interlocuteur direct</h3><p>Vous échangez directement avec les fondateurs, avec des conditions adaptées à votre structure, définies ensemble.</p></article>
+        </div>
+        <a class="btn btn--primary mt-8" href="#demo" data-reveal>Devenir agence partenaire</a>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ ============================== -->
+    <section class="section" id="faq" style="padding-top:0">
+      <div class="container faq">
+        <h2 data-reveal>Vous vous demandez peut-être…</h2>
+        <div class="accordion" data-single data-reveal style="--i:1">
+          <div class="accordion__item"><button class="accordion__trigger" type="button">À qui s’adresse Immo+ ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>Aux agences immobilières, promoteurs, syndics de copropriété et propriétaires bailleurs qui gèrent plusieurs biens, en Afrique francophone d’abord.</p></div></div></div>
+          <div class="accordion__item"><button class="accordion__trigger" type="button">Faut-il tout migrer d’un coup ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>Non. On démarre par un seul sujet (par exemple les loyers), puis on étend. Nous vous aidons à importer vos données depuis vos fichiers Excel.</p></div></div></div>
+          <div class="accordion__item"><button class="accordion__trigger" type="button">Est-ce compatible avec Mobile Money ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>Le suivi des paiements Mobile Money (Orange Money, MTN MoMo, Wave…) fait partie de nos priorités. Les opérateurs pris en charge seront précisés avec les agences partenaires.</p></div></div></div>
+          <div class="accordion__item"><button class="accordion__trigger" type="button">L’IA va-t-elle remplacer mes équipes ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>Non. L’IA prépare le travail (relances, rapprochements, suggestions) et vous décidez. Rien n’est envoyé sans votre validation.</p></div></div></div>
+          <div class="accordion__item"><button class="accordion__trigger" type="button">Et avec une connexion instable ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>L’interface est conçue mobile d’abord et légère, pour rester fluide même avec un réseau limité.</p></div></div></div>
+          <div class="accordion__item"><button class="accordion__trigger" type="button">Et mes données ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>Vos données restent les vôtres : sauvegardées, exportables à tout moment, et accessibles uniquement aux personnes que vous autorisez.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== DEMANDE DE DÉMO ============================== -->
+    <section class="cta-band" id="demo">
+      <div class="container cta-band__grid">
+        <div data-reveal>
+          <span class="eyebrow" style="color:var(--sand-300)">Démonstration</span>
+          <h2 class="mt-2">Voyons ensemble ce qu’Immo+ ferait pour votre parc.</h2>
+          <p class="cta-band__lead">20 minutes en visio, avec vos propres chiffres. Réponse sous 24 h ouvrées.</p>
+          <ul class="contact-list">
+            <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg></span>Réponse possible par WhatsApp</li>
+            <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>Vos données ne sont jamais revendues</li>
+            <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>Abidjan · Dakar · Douala · Libreville · Kinshasa</li>
+          </ul>
+        </div>
+        <div class="demo-card" data-form-card data-reveal style="--i:1">
+          <form class="form" data-validate data-success-toast="Demande envoyée" data-success-text="Nous vous répondons sous 24 h ouvrées.">
+            <h3>Demander une démo</h3>
+            <div class="form__row form__row--2">
+              <div class="field"><label class="field__label" for="d-nom">Nom complet <span class="req">*</span></label><input class="control" id="d-nom" name="nom" required autocomplete="name" placeholder="Aminata Diallo"><p class="field__error"></p></div>
+              <div class="field"><label class="field__label" for="d-structure">Structure <span class="req">*</span></label><input class="control" id="d-structure" name="structure" required placeholder="Agence Horizon Immo"><p class="field__error"></p></div>
+            </div>
+            <div class="form__row form__row--2">
+              <div class="field"><label class="field__label" for="d-mail">E-mail professionnel <span class="req">*</span></label><input class="control" type="email" id="d-mail" name="email" required autocomplete="email" placeholder="nom@agence.com"><p class="field__error"></p></div>
+              <div class="field"><label class="field__label" for="d-tel">Téléphone / WhatsApp <span class="opt">(facultatif)</span></label>
+                <div class="affix"><select class="control" aria-label="Indicatif pays"><option>+225</option><option>+221</option><option>+237</option><option>+243</option><option>+241</option><option>+229</option><option>+228</option><option>+223</option><option>+234</option></select><input class="control" id="d-tel" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="07 00 00 00 00"></div></div>
+            </div>
+            <div class="form__row form__row--2">
+              <div class="field"><label class="field__label" for="d-type">Vous êtes</label><select class="control" id="d-type"><option>Agence immobilière</option><option>Promoteur</option><option>Syndic / copropriété</option><option>Propriétaire bailleur</option><option>Autre</option></select></div>
+              <div class="field"><label class="field__label" for="d-biens">Biens gérés</label><select class="control" id="d-biens"><option>Moins de 20</option><option>20 à 100</option><option>100 à 500</option><option>Plus de 500</option></select></div>
+            </div>
+            <div class="field"><label class="check"><input type="checkbox" required data-error="Merci d’accepter pour que nous puissions vous recontacter."><span>J’accepte d’être recontacté(e) par l’équipe Immo+ au sujet de ma demande.</span></label><p class="field__error"></p></div>
+            <button class="btn btn--primary btn--lg btn--block" type="submit">Envoyer ma demande <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          </form>
+          <div class="form-success" role="status">
+            <span class="check-burst"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7.5"/></svg></span>
+            <h3>Merci, c’est bien reçu.</h3>
+            <p class="text-muted">Nous revenons vers vous sous 24 h ouvrées pour caler un créneau.</p>
+            <a class="btn btn--secondary" href="fonctionnalites.html">Découvrir la gestion des loyers</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== PIED DE PAGE ============================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="logo logo--light" href="index.html"><svg class="logo__svg" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Immo<b>+</b></span></a>
+          <p style="margin-top:1rem;max-width:20rem">Le cockpit de la gestion immobilière pour l’Afrique. Moins d’administratif, plus de rentabilité.</p>
+        </div>
+        <div><h4>Produit</h4><ul><li><a href="#fonctions">Fonctions</a></li><li><a href="fonctionnalites.html">Loyers &amp; paiements</a></li><li><a href="dashboard.html">Aperçu du tableau de bord</a></li></ul></div>
+        <div><h4>Pour qui</h4><ul><li><a href="#pour-qui" data-tab-open="p-agences">Agences</a></li><li><a href="#pour-qui" data-tab-open="p-promoteurs">Promoteurs</a></li><li><a href="#pour-qui" data-tab-open="p-syndics">Syndics</a></li><li><a href="#pour-qui" data-tab-open="p-proprios">Propriétaires</a></li></ul></div>
+        <div><h4>Ressources</h4><ul><li><a href="#faq">Questions fréquentes</a></li><li><a href="#demo">Demander une démo</a></li><li><a href="design-system.html">Design system</a></li></ul></div>
+      </div>
+      <div class="site-footer__bottom"><span>© <span data-year>2026</span> Immo+ — nom provisoire</span><span>Fait avec soin pour l’immobilier africain</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

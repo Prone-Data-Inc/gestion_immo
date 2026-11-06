@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design system — Immo+</title>
+  <meta name="description" content="Référence du design system Immo+ : couleurs, typographie, espacements, composants, mouvement. Document pour les développeurs.">
+  <meta name="theme-color" content="#283618">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23283618'/%3E%3Cpath d='M7 15.2 16 7.8l9 7.4M9.8 14.2V24h12.4v-9.8' fill='none' stroke='%23fefae0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 17.2v4.6M13.7 19.5h4.6' stroke='%23dda15e' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/docs.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <script src="assets/js/icons.js"></script>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#606c38" stop-opacity=".25"/><stop offset="1" stop-color="#606c38" stop-opacity="0"/></linearGradient></defs></svg>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <div class="docs" id="docs">
+    <button class="btn btn--icon btn--sm docs-nav__toggle" type="button" aria-label="Ouvrir le sommaire"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+
+    <!-- ============================== SOMMAIRE ============================== -->
+    <nav class="docs-nav" aria-label="Sommaire">
+      <a class="logo" href="index.html"><svg class="logo__svg" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Immo<b>+</b></span></a>
+      <span class="badge">Design system · v0.1</span>
+      <h4>Fondations</h4>
+      <a href="#s-intro">Introduction</a>
+      <a href="#s-couleurs">Couleurs</a>
+      <a href="#s-typo">Typographie</a>
+      <a href="#s-espace">Espacement &amp; grille</a>
+      <a href="#s-forme">Rayons &amp; ombres</a>
+      <a href="#s-icones">Icônes</a>
+      <h4>Composants</h4>
+      <a href="#s-boutons">Boutons</a>
+      <a href="#s-formulaires">Formulaires</a>
+      <a href="#s-feedback">Badges &amp; alertes</a>
+      <a href="#s-cartes">Cartes &amp; KPI</a>
+      <a href="#s-navigation">Navigation</a>
+      <a href="#s-donnees">Tableaux &amp; listes</a>
+      <a href="#s-overlays">Modale, toast, squelette</a>
+      <h4>Mouvement</h4>
+      <a href="#s-mouvement">Principes &amp; tokens</a>
+      <a href="#s-parcours">Parcours &amp; transitions</a>
+      <h4>Produit</h4>
+      <a href="#s-mascotte">Mascotte &amp; illustration</a>
+      <a href="#s-afrique">Marché africain</a>
+      <a href="#s-a11y">Accessibilité</a>
+      <a href="#s-integration">Intégration (dev)</a>
+    </nav>
+
+    <main class="docs-main" id="main">
+      <!-- ============================== INTRO ============================== -->
+      <header class="docs-hero" data-reveal>
+        <span class="eyebrow">Design system · v0.1 · nom de marque provisoire</span>
+        <h1>Immo<span style="color:var(--terracotta-600)">+</span> Design System</h1>
+        <p class="t-lead">La référence unique pour construire l’interface : couleurs, typographie, composants et mouvement. Épuré, aéré, titres serrés, boutons en pilule et animations douces, avec une palette inspirée des terres d’Afrique.</p>
+      </header>
+
+      <section class="ds-section" id="s-intro" style="padding-top:2rem">
+        <h2><span class="n">00</span>Principes</h2>
+        <div class="grid grid--4 mt-6" style="--gap:1rem" data-stagger>
+          <div class="card card--tint-sand"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><h4 class="mt-4">Clarté d’abord</h4><p class="card__text mt-2">Un indicateur, une couleur, une action. On retire avant d’ajouter.</p></div>
+          <div class="card card--tint-olive"><span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span><h4 class="mt-4">Chaleureux</h4><p class="card__text mt-2">Terre, sable et forêt plutôt que le bleu « corporate ». Une mascotte discrète.</p></div>
+          <div class="card card--tint-terracotta"><span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg></span><h4 class="mt-4">Mobile et réseau limité</h4><p class="card__text mt-2">Cibles tactiles de 44 px, SVG et CSS purs, aucune librairie lourde.</p></div>
+          <div class="card card--tint-mix"><span class="icon-tile icon-tile--mix"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span><h4 class="mt-4">L’IA propose, l’humain valide</h4><p class="card__text mt-2">Chaque suggestion se valide ou s’ignore. Rien ne part sans accord.</p></div>
+        </div>
+
+        <h3 class="ds-sub">Fichiers du système</h3>
+        <div class="file-tree"><b>design_system/</b>
+├─ <b>design-system.html</b>   <i>cette page (référence développeur)</i>
+├─ <b>index.html</b>           <i>site vitrine</i>
+├─ <b>fonctionnalites.html</b> <i>page fonctionnalité « Loyers et paiements »</i>
+├─ <b>dashboard.html</b>       <i>tableau de bord KPI</i>
+└─ <b>assets/</b>
+   ├─ css/  tokens.css · base.css · components.css · site.css · app.css · docs.css
+   └─ js/   icons.js · main.js · dashboard.js · feature.js · docs.js</div>
+        <div class="ds-note ds-note--ok"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><div><strong>Ordre de chargement CSS :</strong> <code>tokens</code> → <code>base</code> → <code>components</code> → (<code>site</code> pour le marketing, <code>app</code> pour le produit). Seul <code>tokens.css</code> contient des valeurs brutes ; tout le reste utilise <code>var(--…)</code>.</div></div>
+      </section>
+
+      <!-- ============================== COULEURS ============================== -->
+      <section class="ds-section" id="s-couleurs">
+        <h2><span class="n">01</span>Couleurs</h2>
+        <p class="t-lead">Cinq couleurs de marque, hiérarchisées par rôle. Cliquez sur une pastille pour copier sa valeur.</p>
+
+        <div class="swatches">
+          <button class="swatch" type="button" data-copy="#283618" style="--c:#283618;--on:#fefae0"><div class="swatch__chip">Priorité 1</div><div class="swatch__body"><strong>Forêt</strong><code>#283618</code><p><b>Primaire.</b> Texte, boutons primaires, barre latérale, sections sombres.</p></div></button>
+          <button class="swatch" type="button" data-copy="#fefae0" style="--c:#fefae0;--on:#283618"><div class="swatch__chip">Priorité 2</div><div class="swatch__body"><strong>Crème</strong><code>#fefae0</code><p><b>Fond.</b> Fond de page, texte sur zones sombres.</p></div></button>
+          <button class="swatch" type="button" data-copy="#bc6c25" style="--c:#bc6c25;--on:#fff"><div class="swatch__chip">Priorité 3</div><div class="swatch__body"><strong>Terracotta</strong><code>#bc6c25</code><p><b>Accent.</b> Le « + » de la marque, données clés, états actifs, surlignage.</p></div></button>
+          <button class="swatch" type="button" data-copy="#606c38" style="--c:#606c38;--on:#fefae0"><div class="swatch__chip">Secondaire</div><div class="swatch__body"><strong>Olive</strong><code>#606c38</code><p><b>Soutien.</b> Succès, texte atténué, séries secondaires de graphique.</p></div></button>
+          <button class="swatch" type="button" data-copy="#dda15e" style="--c:#dda15e;--on:#283618"><div class="swatch__chip">Chaleur</div><div class="swatch__body"><strong>Sable</strong><code>#dda15e</code><p><b>Douceur.</b> Dégradés, avertissements, fonds doux, surlignage.</p></div></button>
+        </div>
+
+        <h3 class="ds-sub">Répartition visée sur un écran <small>règle d’équilibre, pas une contrainte stricte</small></h3>
+        <div class="ratio-bar" aria-label="Répartition des couleurs">
+          <div style="flex:55;background:#fefae0;color:#283618">Crème 55 %</div>
+          <div style="flex:25;background:#283618;color:#fefae0">Forêt 25 %</div>
+          <div style="flex:10;background:#dda15e;color:#283618">Sable</div>
+          <div style="flex:6;background:#606c38;color:#fefae0">Olive</div>
+          <div style="flex:4;background:#bc6c25;color:#fff">Terra.</div>
+        </div>
+
+        <h3 class="ds-sub">Échelles <small>générées à partir des 5 couleurs · ● = valeur de base</small></h3>
+        <div class="ramps" id="ramps"></div>
+
+        <h3 class="ds-sub">Tokens sémantiques <small>à utiliser dans les composants, jamais les hex</small></h3>
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Token</th><th>Valeur</th><th>Usage</th></tr></thead><tbody id="sem-body"></tbody></table></div>
+
+        <h3 class="ds-sub">États <small>rouge et bleu-vert ajoutés hors palette, pour les erreurs et l’information</small></h3>
+        <div class="ds-demo ds-demo--solo" data-code>
+          <span class="badge badge--success badge--dot">Encaissé</span>
+          <span class="badge badge--warning badge--dot">À relancer</span>
+          <span class="badge badge--danger badge--dot">Impayé critique</span>
+          <span class="badge badge--info badge--dot">Planifié</span>
+          <span class="badge badge--accent">Nouveau</span>
+          <span class="badge badge--dark">Premium</span>
+        </div>
+
+        <h3 class="ds-sub">Dégradés</h3>
+        <div class="grid grid--4" style="--gap:.8rem">
+          <div class="grad-chip" style="background:var(--grad-warm)">--grad-warm</div>
+          <div class="grad-chip" style="background:var(--grad-olive)">--grad-olive</div>
+          <div class="grad-chip" style="background:var(--grad-terracotta)">--grad-terracotta</div>
+          <div class="grad-chip" style="background:var(--grad-sand)">--grad-sand</div>
+          <div class="grad-chip" style="background:var(--grad-dark);color:var(--cream-100)">--grad-dark</div>
+        </div>
+
+        <h3 class="ds-sub">Contrastes mesurés <small>calculés en direct (WCAG 2.2)</small></h3>
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Aperçu</th><th>Cas d’usage</th><th>Paire</th><th>Ratio</th><th>Niveau</th></tr></thead><tbody id="contrast-body"></tbody></table></div>
+        <div class="ds-note"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><div><strong>À savoir :</strong> la terracotta <code>#bc6c25</code> sur crème n’atteint que 3,8 : 1. On l’utilise pour les fonds, icônes et grands titres. Pour du <em>petit texte</em> accentué, on prend <code>--accent-text</code> (terracotta 700, 4,9 : 1). Le sable n’est jamais utilisé comme texte.</div></div>
+
+        <div class="do-dont">
+          <div class="do"><strong>À faire</strong><ul><li>Un seul bouton primaire (forêt) par zone</li><li>Terracotta pour <em>un</em> point d’attention à la fois</li><li>Doubler la couleur d’un texte ou d’une icône (statut jamais par la couleur seule)</li></ul></div>
+          <div class="dont"><strong>À éviter</strong><ul><li>Texte sable sur crème</li><li>Plus de deux couleurs vives dans un même graphique</li><li>Noir pur ou gris froid : toujours des neutres teintés forêt</li></ul></div>
+        </div>
+      </section>
+
+      <!-- ============================== TYPOGRAPHIE ============================== -->
+      <section class="ds-section" id="s-typo">
+        <h2><span class="n">02</span>Typographie</h2>
+        <p class="t-lead">Deux familles : <strong>Plus Jakarta Sans</strong> pour les titres et chiffres clés (caractère, chaleur), <strong>Inter</strong> pour le texte et les interfaces (lisibilité à petite taille).</p>
+        <div class="grid grid--2 mt-6" style="--gap:1rem">
+          <div class="font-card"><div class="glyph" style="font-family:var(--font-display);font-weight:800">Aa</div><strong style="font-family:var(--font-display)">Plus Jakarta Sans</strong> <span class="text-muted t-small">· 600 · 700 · 800</span><p class="alpha" style="font-family:var(--font-display);font-weight:700">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 FCFA € ₦ GH₵</p><code class="mt-2" style="display:inline-block">var(--font-display)</code></div>
+          <div class="font-card"><div class="glyph" style="font-family:var(--font-body);font-weight:500">Aa</div><strong>Inter</strong> <span class="text-muted t-small">· 400 · 500 · 600</span><p class="alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 é è ê à ç ô œ « »</p><code class="mt-2" style="display:inline-block">var(--font-body)</code></div>
+        </div>
+
+        <h3 class="ds-sub">Échelle <small>fluide : les titres s’adaptent à la largeur d’écran</small></h3>
+        <div>
+          <div class="type-row"><div class="type-row__meta"><b>Display</b>40 → 68 px<br>800 · −4 % · 1,04<br><code>.t-display</code></div><p class="t-display" style="font-size:clamp(2.2rem,1rem + 4vw,4.25rem)">Moins d’administratif.</p></div>
+          <div class="type-row"><div class="type-row__meta"><b>H1</b>34 → 48 px<br>800 · −3 %<br><code>h1 / .t-h1</code></div><h1>Tout votre portefeuille</h1></div>
+          <div class="type-row"><div class="type-row__meta"><b>H2</b>28 → 36 px<br>800 · −3 %<br><code>h2 / .t-h2</code></div><h2>Loyers encaissés ce mois</h2></div>
+          <div class="type-row"><div class="type-row__meta"><b>H3</b>24 px · 700<br><code>h3</code></div><h3>Relancer 6 locataires</h3></div>
+          <div class="type-row"><div class="type-row__meta"><b>H4</b>20 px · 700<br><code>h4</code></div><h4>Occupation du parc</h4></div>
+          <div class="type-row"><div class="type-row__meta"><b>H5 / H6</b>18 / 16 px · 700<br><code>h5 · h6</code></div><div><h5>Modes de paiement</h5><h6 class="mt-2">Baux à renouveler</h6></div></div>
+          <div class="type-row"><div class="type-row__meta"><b>Chapeau</b>18 px · 1,7<br>olive<br><code>.t-lead</code></div><p class="t-lead">Loyers encaissés, biens occupés, travaux suivis : vous le voyez d’un coup d’œil.</p></div>
+          <div class="type-row"><div class="type-row__meta"><b>Corps</b>16 px · 1,55<br>400<br><code>body</code></div><p>Immo+ centralise la gestion des biens, des locataires, des loyers et des travaux. Moins d’administratif, plus de temps pour vos clients.</p></div>
+          <div class="type-row"><div class="type-row__meta"><b>Petit</b>14 px<br><code>.t-small</code></div><p class="t-small">Dernière relance envoyée hier à 9 h par WhatsApp.</p></div>
+          <div class="type-row"><div class="type-row__meta"><b>Extra-petit</b>12 px<br><code>.t-xs</code></div><p class="t-xs text-muted">Réf. TX-8841-2207 · 12:43</p></div>
+          <div class="type-row"><div class="type-row__meta"><b>Surtitre</b>11 px · +14 %<br>capitales<br><code>.eyebrow</code></div><span class="eyebrow">Le cockpit de la gestion immobilière</span></div>
+          <div class="type-row"><div class="type-row__meta"><b>Chiffre clé</b>Display · tabulaire<br><code>.num</code></div><p class="num" style="font-family:var(--font-display);font-weight:800;font-size:2.4rem;letter-spacing:-.045em;line-height:1">48 240 000 <small style="font-size:.4em;color:var(--text-muted);letter-spacing:0">FCFA</small></p></div>
+          <div class="type-row"><div class="type-row__meta"><b>Mono</b>0,88 em<br><code>code</code></div><p>Utilisez <code>var(--space-4)</code> plutôt que <code>16px</code>.</p></div>
+        </div>
+
+        <h3 class="ds-sub">Surlignage de mot <small><code>.mark</code> : coup de pinceau sable qui se dessine</small></h3>
+        <div class="ds-demo ds-demo--solo ds-demo--stack" data-code>
+          <h2 data-inview>Plus de <span class="mark">rentabilité</span>.</h2>
+        </div>
+        <div class="ds-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><div><strong>Règles :</strong> titres en <code>text-wrap: balance</code> ; <strong>toujours</strong> <code>.num</code> (chiffres tabulaires) pour les montants et colonnes de chiffres ; interlignage jamais inférieur à 1,5 pour le texte courant ; longueur de ligne ≤ 70 caractères.</div></div>
+      </section>
+
+      <!-- ============================== ESPACEMENT ============================== -->
+      <section class="ds-section" id="s-espace">
+        <h2><span class="n">03</span>Espacement &amp; grille</h2>
+        <p class="t-lead">Base de 4 px. Tous les écarts viennent de l’échelle ci-dessous ; aucune valeur « au pixel près » dans les composants.</p>
+        <div class="mt-6" id="space-list"></div>
+
+        <h3 class="ds-sub">Conteneurs</h3>
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Token</th><th>Valeur</th><th>Usage</th></tr></thead><tbody>
+          <tr><td><code>--container</code></td><td>1080 px</td><td>Pages marketing (colonne éditoriale resserrée)</td></tr>
+          <tr><td><code>--container-narrow</code></td><td>720 px</td><td>Texte long, formulaires</td></tr>
+          <tr><td><code>--container-wide</code></td><td>1280 px</td><td>Grandes grilles, tableaux marketing</td></tr>
+          <tr><td><code>--gutter</code></td><td>20 → 32 px</td><td>Marge latérale fluide</td></tr>
+          <tr><td><code>--section-y</code></td><td>72 → 128 px</td><td>Respiration verticale entre sections</td></tr>
+          <tr><td><code>--header-h</code> · <code>--sidebar-w</code></td><td>68 px · 272 px</td><td>En-tête fixe · barre latérale de l’application</td></tr>
+        </tbody></table></div>
+
+        <h3 class="ds-sub">Grille de l’application <small>12 colonnes ≥ 1100 px, 1 colonne en dessous</small></h3>
+        <div class="layout-demo"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div></div>
+        <p class="t-small text-muted mt-2">Classes : <code>.dash-grid</code> + <code>.span-4</code> · <code>.span-5</code> · <code>.span-6</code> · <code>.span-7</code> · <code>.span-8</code></p>
+
+        <h3 class="ds-sub">Points de rupture <small>mobile d’abord (min-width)</small></h3>
+        <div class="bp-list">
+          <div class="bp"><code>sm</code><span>640 px</span><i style="--w:26%"></i></div>
+          <div class="bp"><code>md</code><span>768–900 px</span><i style="--w:40%"></i></div>
+          <div class="bp"><code>lg</code><span>1024–1100 px</span><i style="--w:62%"></i></div>
+          <div class="bp"><code>xl</code><span>1280 px</span><i style="--w:84%"></i></div>
+        </div>
+      </section>
+
+      <!-- ============================== FORMES ============================== -->
+      <section class="ds-section" id="s-forme">
+        <h2><span class="n">04</span>Rayons &amp; ombres</h2>
+        <p class="t-lead">Des formes très arrondies et des ombres douces teintées de vert forêt (jamais de noir) : l’interface reste légère et chaleureuse.</p>
+        <h3 class="ds-sub">Rayons</h3>
+        <div class="radius-grid">
+          <div class="radius-box" style="--r:var(--radius-sm)">sm · 8</div><div class="radius-box" style="--r:var(--radius-md)">md · 12</div><div class="radius-box" style="--r:var(--radius-lg)">lg · 16</div>
+          <div class="radius-box" style="--r:var(--radius-xl)">xl · 24</div><div class="radius-box" style="--r:var(--radius-2xl)">2xl · 32</div><div class="radius-box" style="--r:var(--radius-pill)">pill · 999</div>
+        </div>
+        <p class="t-small text-muted mt-2">Boutons, badges, onglets, champs de recherche : <code>pill</code>. Champs : <code>md</code>. Cartes : <code>xl</code>. Grands visuels : <code>2xl</code>.</p>
+        <h3 class="ds-sub">Ombres <small>survolez pour voir l’élévation</small></h3>
+        <div class="shadow-grid">
+          <div class="shadow-box" style="--s:var(--shadow-xs)">xs</div><div class="shadow-box" style="--s:var(--shadow-sm)">sm</div><div class="shadow-box" style="--s:var(--shadow-md)">md</div>
+          <div class="shadow-box" style="--s:var(--shadow-lg)">lg</div><div class="shadow-box" style="--s:var(--shadow-xl)">xl</div>
+        </div>
+      </section>
+
+      <!-- ============================== ICÔNES ============================== -->
+      <section class="ds-section" id="s-icones">
+        <h2><span class="n">05</span>Icônes</h2>
+        <p class="t-lead"><span id="icon-count">0</span> icônes au trait (1,75 px, extrémités arrondies), injectées en sprite SVG : un seul fichier JS, zéro requête réseau. Cliquez pour copier le code.</p>
+        <div class="control-icon mt-6" style="max-width:20rem"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input class="control" id="icon-search" type="search" placeholder="Filtrer les icônes…" aria-label="Filtrer les icônes"></div>
+        <div class="icon-grid" id="icon-grid"></div>
+        <div class="ds-demo ds-demo--solo mt-6" data-code>
+          <svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-wallet"/></svg>
+          <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+          <span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+          <span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span>
+          <span class="icon-tile icon-tile--forest"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+          <span class="icon-tile icon-tile--mix"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+          <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+        </div>
+      </section>
+
+      <!-- ============================== BOUTONS ============================== -->
+      <section class="ds-section" id="s-boutons">
+        <h2><span class="n">06</span>Boutons</h2>
+        <p class="t-lead">Toujours en pilule. Le bouton <strong>primaire</strong> est forêt sur clair, crème sur sombre. Un seul primaire par zone.</p>
+
+        <h3 class="ds-sub">Variantes</h3>
+        <div class="ds-demo" data-code>
+          <button class="btn btn--primary" type="button">Demander une démo</button>
+          <button class="btn btn--accent" type="button">Ajouter un bien</button>
+          <button class="btn btn--secondary" type="button">Exporter</button>
+          <button class="btn btn--soft" type="button">Relancer</button>
+          <button class="btn btn--ghost" type="button">Annuler</button>
+          <button class="btn btn--danger" type="button">Supprimer</button>
+          <a class="btn btn--link" href="#s-boutons">Découvrir <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+        </div>
+        <h3 class="ds-sub">Sur fond sombre</h3>
+        <div class="ds-demo ds-demo--dark" data-code>
+          <button class="btn btn--light" type="button">Demander une démo</button>
+          <button class="btn btn--outline-light" type="button">Voir le tableau de bord</button>
+        </div>
+        <h3 class="ds-sub">Tailles <small>hauteurs : 36 · 44 · 56 px</small></h3>
+        <div class="ds-demo" data-code>
+          <button class="btn btn--primary btn--sm" type="button">Petit</button>
+          <button class="btn btn--primary" type="button">Moyen</button>
+          <button class="btn btn--primary btn--lg" type="button">Grand</button>
+        </div>
+        <h3 class="ds-sub">Avec icône, icône seule, groupe</h3>
+        <div class="ds-demo" data-code>
+          <button class="btn btn--primary" type="button"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Nouveau locataire</button>
+          <button class="btn btn--secondary" type="button">Continuer <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          <button class="btn btn--soft btn--icon" type="button" aria-label="Télécharger" data-tip="Télécharger"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></button>
+          <button class="btn btn--ghost btn--icon" type="button" aria-label="Plus d’actions"><svg class="icon" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="btn-group" role="group" aria-label="Affichage"><button class="btn btn--secondary btn--sm" type="button">Liste</button><button class="btn btn--secondary btn--sm" type="button">Carte</button><button class="btn btn--secondary btn--sm" type="button">Calendrier</button></div>
+        </div>
+        <h3 class="ds-sub">États <small>survol : élévation de 1 px · appui : réduction à 97 %</small></h3>
+        <div class="ds-demo" data-code>
+          <button class="btn btn--primary" type="button">Par défaut</button>
+          <button class="btn btn--primary" type="button" data-load-demo>Cliquer pour charger</button>
+          <button class="btn btn--primary is-loading" type="button">Chargement</button>
+          <button class="btn btn--primary" type="button" disabled>Désactivé</button>
+          <button class="btn btn--secondary" type="button" disabled>Désactivé</button>
+        </div>
+        <div class="ds-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><div><strong>Texte du bouton :</strong> un verbe d’action concret (« Relancer », « Ajouter un bien »), jamais « OK » ni « Valider » seul. Boutons principaux de 44 px minimum de haut sur mobile.</div></div>
+      </section>
+
+      <!-- ============================== FORMULAIRES ============================== -->
+      <section class="ds-section" id="s-formulaires">
+        <h2><span class="n">07</span>Formulaires</h2>
+        <p class="t-lead">Libellé toujours visible au-dessus du champ, aide en dessous, erreur explicite en français. Validation à la sortie du champ puis à l’envoi, avec focus sur la première erreur.</p>
+
+        <h3 class="ds-sub">Champs de texte et états</h3>
+        <div class="ds-demo ds-demo--grid" data-code>
+          <div class="field"><label class="field__label" for="f1">Nom du locataire <span class="req">*</span></label><input class="control" id="f1" placeholder="Aminata Diallo"><p class="field__hint">Tel qu’il apparaîtra sur la quittance.</p></div>
+          <div class="field is-invalid"><label class="field__label" for="f2">E-mail</label><input class="control" id="f2" type="email" value="aminata@agence" aria-invalid="true"><p class="field__hint">Pour envoyer les quittances.</p><p class="field__error"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-alert"/></svg><span>Saisissez une adresse e-mail valide.</span></p></div>
+          <div class="field is-valid"><label class="field__label" for="f3">Référence du bail</label><input class="control" id="f3" value="BAIL-2026-0412"></div>
+          <div class="field"><label class="field__label" for="f4">Champ désactivé</label><input class="control" id="f4" value="Non modifiable" disabled></div>
+        </div>
+
+        <h3 class="ds-sub">Préfixes, suffixes, icône <small>montants en FCFA, indicatifs téléphoniques</small></h3>
+        <div class="ds-demo ds-demo--grid" data-code>
+          <div class="field"><label class="field__label" for="f5">Loyer mensuel</label><div class="affix"><input class="control num" id="f5" inputmode="numeric" placeholder="250 000"><span class="affix__add">FCFA</span></div></div>
+          <div class="field"><label class="field__label" for="f6">Téléphone / WhatsApp</label><div class="affix"><select class="control" aria-label="Indicatif"><option>+225</option><option>+221</option><option>+237</option><option>+243</option></select><input class="control" id="f6" type="tel" inputmode="tel" placeholder="07 00 00 00 00"></div></div>
+          <div class="field"><label class="field__label" for="f7">Recherche</label><div class="control-icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input class="control" id="f7" type="search" placeholder="Bien, locataire…"></div></div>
+        </div>
+
+        <h3 class="ds-sub">Liste déroulante et zone de texte</h3>
+        <div class="ds-demo ds-demo--grid" data-code>
+          <div class="field"><label class="field__label" for="f8">Ville</label><select class="control" id="f8"><option>Abidjan</option><option>Dakar</option><option>Douala</option><option>Libreville</option><option>Kinshasa</option></select></div>
+          <div class="field"><label class="field__label" for="f9">Note interne <span class="opt">(facultatif)</span></label><textarea class="control" id="f9" placeholder="Ex. Le locataire préfère être contacté par WhatsApp."></textarea></div>
+        </div>
+
+        <h3 class="ds-sub">Cases, radios, interrupteur, curseur</h3>
+        <div class="ds-demo ds-demo--grid" data-code>
+          <fieldset class="fieldset"><legend>Notifications</legend>
+            <label class="check"><input type="checkbox" checked><span>Paiements reçus</span></label>
+            <label class="check"><input type="checkbox"><span>Baux à renouveler</span></label>
+            <label class="check"><input type="checkbox" disabled><span>Désactivé</span></label>
+          </fieldset>
+          <fieldset class="fieldset"><legend>Canal de relance</legend>
+            <label class="check"><input type="radio" name="canal" checked><span>WhatsApp</span></label>
+            <label class="check"><input type="radio" name="canal"><span>SMS</span></label>
+            <label class="check"><input type="radio" name="canal"><span>E-mail</span></label>
+          </fieldset>
+          <div class="stack" style="--gap:1rem">
+            <label class="switch"><input type="checkbox" role="switch" checked><span>Relances automatiques</span></label>
+            <label class="switch"><input type="checkbox" role="switch"><span>Quittances par e-mail</span></label>
+            <div class="sim__row" style="gap:.4rem"><label for="f10" style="display:flex;justify-content:space-between;font-size:var(--fs-sm);font-weight:600">Délai de relance <output id="f10o" style="color:var(--accent-text)">5 jours</output></label><input class="range" id="f10" type="range" min="1" max="15" value="5" oninput="document.getElementById('f10o').textContent=this.value+' jours'"></div>
+          </div>
+        </div>
+
+        <h3 class="ds-sub">Cartes de choix, contrôle segmenté, stepper</h3>
+        <div class="ds-demo ds-demo--stack" data-code>
+          <fieldset class="fieldset"><legend>Type de bien</legend>
+            <div class="grid" style="--gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr))">
+              <label class="choice"><input type="radio" name="tb" checked><span class="choice__body"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><strong>Appartement</strong><small>Résidence, immeuble</small></span></label>
+              <label class="choice"><input type="radio" name="tb"><span class="choice__body"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><strong>Villa</strong><small>Maison individuelle</small></span></label>
+              <label class="choice"><input type="radio" name="tb"><span class="choice__body"><svg class="icon" aria-hidden="true"><use href="#i-door"/></svg><strong>Local pro</strong><small>Boutique, bureau</small></span></label>
+            </div>
+          </fieldset>
+          <div class="cluster" style="gap:2rem">
+            <div class="segmented" role="radiogroup" aria-label="Période"><label><input type="radio" name="per" checked><span>30 jours</span></label><label><input type="radio" name="per"><span>3 mois</span></label><label><input type="radio" name="per"><span>12 mois</span></label></div>
+            <div class="stepper"><button type="button" aria-label="Moins">−</button><input type="number" value="3" min="1" max="20" aria-label="Pièces"><button type="button" aria-label="Plus">+</button></div>
+          </div>
+        </div>
+
+        <h3 class="ds-sub">Dépôt de fichiers</h3>
+        <div class="ds-demo ds-demo--stack" data-code>
+          <label class="dropzone"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg><strong>Glissez le contrat ici</strong><span>ou cliquez pour parcourir · PDF, JPG jusqu’à 10 Mo</span><input type="file" class="sr-only" accept=".pdf,.jpg,.jpeg,.png" multiple></label>
+        </div>
+
+        <h3 class="ds-sub">Formulaire complet avec validation <small>essayez de valider avec des champs vides</small></h3>
+        <div class="ds-demo ds-demo--stack" data-code>
+          <form class="form" data-validate data-success-toast="Locataire enregistré" data-success-text="Son dossier est créé.">
+            <div class="form__row form__row--2">
+              <div class="field"><label class="field__label" for="n1">Nom complet <span class="req">*</span></label><input class="control" id="n1" required placeholder="Kouassi Yao"><p class="field__error"></p></div>
+              <div class="field"><label class="field__label" for="n2">E-mail <span class="req">*</span></label><input class="control" id="n2" type="email" required placeholder="nom@exemple.com"><p class="field__error"></p></div>
+            </div>
+            <div class="field"><label class="field__label" for="n3">Loyer mensuel <span class="req">*</span></label><div class="affix"><input class="control num" id="n3" required inputmode="numeric" placeholder="250 000"><span class="affix__add">FCFA</span></div><p class="field__error"></p></div>
+            <label class="check"><input type="checkbox" required><span>Le locataire accepte de recevoir ses quittances par e-mail.</span></label>
+            <div class="cluster"><button class="btn btn--primary" type="submit">Enregistrer le locataire</button><button class="btn btn--ghost" type="reset">Effacer</button></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ============================== FEEDBACK ============================== -->
+      <section class="ds-section" id="s-feedback">
+        <h2><span class="n">08</span>Badges, alertes, progression</h2>
+        <h3 class="ds-sub">Badges et puces de filtre</h3>
+        <div class="ds-demo" data-code>
+          <span class="badge">Neutre</span>
+          <span class="badge badge--success badge--dot">Payé</span>
+          <span class="badge badge--warning badge--dot">En retard</span>
+          <span class="badge badge--danger badge--dot">Critique</span>
+          <span class="badge badge--info badge--dot">Planifié</span>
+          <span class="badge badge--accent">IA</span>
+          <span class="badge badge--outline">12 déc.</span>
+          <button class="chip is-active" aria-pressed="true" type="button">Tous</button>
+          <button class="chip" aria-pressed="false" type="button">+ 30 j</button>
+        </div>
+        <h3 class="ds-sub">Alertes</h3>
+        <div class="ds-demo ds-demo--stack" data-code>
+          <div class="alert alert--success"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><div><strong>Paiement rapproché</strong><p>250 000 FCFA ont été associés au loyer de novembre.</p></div></div>
+          <div class="alert alert--warning"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><div><strong>Bail à renouveler dans 12 jours</strong><p>Villa Angré, Cocody.</p></div></div>
+          <div class="alert alert--danger"><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg><div><strong>Échec de l’envoi WhatsApp</strong><p>Le numéro semble invalide. Vérifiez la fiche du locataire.</p></div></div>
+          <div class="alert alert--info"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><div><strong>Import en cours</strong><p>Vos 124 biens sont en cours d’importation depuis Excel.</p></div></div>
+        </div>
+        <h3 class="ds-sub">Barres de progression et avatars</h3>
+        <div class="ds-demo ds-demo--grid" data-code>
+          <div class="stack" style="--gap:.9rem"><div><div class="t-small" style="display:flex;justify-content:space-between;margin-bottom:.3rem"><span>Recouvrement</span><b>94 %</b></div><div class="progress"><div class="progress__bar" style="--value:94%"></div></div></div>
+            <div><div class="t-small" style="display:flex;justify-content:space-between;margin-bottom:.3rem"><span>Occupation</span><b>73 %</b></div><div class="progress progress--accent"><div class="progress__bar" style="--value:73%"></div></div></div>
+            <div><div class="t-small" style="display:flex;justify-content:space-between;margin-bottom:.3rem"><span>Vacance</span><b>31 %</b></div><div class="progress progress--warn"><div class="progress__bar" style="--value:31%"></div></div></div></div>
+          <div class="stack" style="--gap:1rem"><div class="cluster"><span class="avatar">AD</span><span class="avatar avatar--olive">KY</span><span class="avatar avatar--terracotta">FS</span><span class="avatar avatar--forest">IK</span><span class="avatar avatar--lg">JM</span></div>
+            <div class="avatar-stack"><span class="avatar">AD</span><span class="avatar avatar--olive">KY</span><span class="avatar avatar--terracotta">FS</span><span class="avatar avatar--forest">+4</span></div></div>
+        </div>
+        <h3 class="ds-sub">État vide</h3>
+        <div class="ds-demo ds-demo--solo ds-demo--stack" data-code>
+          <div class="empty"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><h4>Aucun locataire pour l’instant</h4><p>Ajoutez votre premier locataire ou importez un fichier Excel.</p><button class="btn btn--primary btn--sm mt-2" type="button"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Ajouter un locataire</button></div>
+        </div>
+      </section>
+
+      <!-- ============================== CARTES ============================== -->
+      <section class="ds-section" id="s-cartes">
+        <h2><span class="n">09</span>Cartes &amp; KPI</h2>
+        <h3 class="ds-sub">Cartes</h3>
+        <div class="ds-demo ds-demo--grid ds-demo--sunken" data-code>
+          <div class="card"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span><h4 class="card__title mt-4">Carte standard</h4><p class="card__text mt-2">Fond clair, filet fin, ombre minimale.</p></div>
+          <div class="card card--hover"><span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span><h4 class="card__title mt-4">Carte interactive</h4><p class="card__text mt-2">Survolez : elle se soulève de 4 px.</p></div>
+          <div class="card card--tint-terracotta"><h4 class="card__title">Carte teintée</h4><p class="card__text mt-2" style="color:var(--forest-700)">Dégradé pastel pour les blocs d’argumentaire.</p></div>
+          <div class="card card--dark"><h4>Carte sombre</h4><p class="mt-2 t-small" style="color:var(--text-on-dark-muted)">Pour un bloc à mettre en avant.</p></div>
+        </div>
+        <h3 class="ds-sub">Carte KPI <small>chiffre en Display tabulaire, tendance, mini-courbe</small></h3>
+        <div class="ds-demo ds-demo--sunken ds-demo--stack" data-code>
+          <div class="kpis">
+            <article class="kpi"><div class="kpi__top"><span class="kpi__label">Loyers encaissés</span><span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span></div><div class="kpi__value">48,2<small>M FCFA</small></div><div class="kpi__foot"><span class="delta delta--up"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>+8,4 %</span><span>vs mois dernier</span></div><svg class="kpi__spark" viewBox="0 0 88 36" aria-hidden="true"><path class="spark-area" d="M0 28 L15 24 L30 26 L45 16 L60 18 L75 8 L88 4 L88 36 L0 36Z"/><path class="spark-line" pathLength="1" d="M0 28 L15 24 L30 26 L45 16 L60 18 L75 8 L88 4"/></svg></article>
+            <article class="kpi kpi--warn"><div class="kpi__top"><span class="kpi__label">Impayés</span><span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span></div><div class="kpi__value">3,1<small>M FCFA</small></div><div class="kpi__foot"><span class="delta delta--up"><svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>−12 %</span><span>14 locataires</span></div><svg class="kpi__spark" viewBox="0 0 88 36" aria-hidden="true"><path class="spark-line" pathLength="1" d="M0 6 L15 10 L30 8 L45 16 L60 20 L75 26 L88 30"/></svg></article>
+          </div>
+        </div>
+        <p class="t-small text-muted mt-2"><code>.delta--up</code> = évolution <em>favorable</em> (olive), <code>.delta--down</code> = défavorable (rouge), quel que soit le sens de la flèche : une baisse d’impayés est favorable.</p>
+        <h3 class="ds-sub">Suggestion de l’IA <small>pattern « l’IA propose, vous validez »</small></h3>
+        <div class="ds-demo ds-demo--solo ds-demo--stack" style="padding:0" data-code>
+          <div class="panel panel--dark" style="border-radius:var(--radius-lg)">
+            <span class="ai-label"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>L’IA propose</span>
+            <div class="suggest" style="margin:0"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></span><div><strong>Relancer 6 locataires en retard sur WhatsApp</strong><p>Message poli, avec lien de paiement Mobile Money.</p></div><div class="suggest__actions"><button class="btn btn--light btn--sm" type="button">Valider</button><button class="btn btn--outline-light btn--sm" type="button">Ignorer</button></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== NAVIGATION ============================== -->
+      <section class="ds-section" id="s-navigation">
+        <h2><span class="n">10</span>Navigation</h2>
+        <h3 class="ds-sub">En-tête du site <small>transparent, flou et filet au scroll</small></h3>
+        <div class="ds-demo ds-demo--solo nav-preview">
+          <div class="site-header is-scrolled"><div class="container site-header__inner" style="width:calc(100% - 2rem)">
+            <a class="logo" href="index.html"><svg class="logo__svg" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Immo<b>+</b></span></a>
+            <nav class="nav"><a class="nav__link" href="#s-navigation" aria-current="page">Fonctions</a><a class="nav__link" href="#s-navigation">Pour qui ?</a><a class="nav__link" href="#s-navigation">Questions</a></nav>
+            <a class="btn btn--primary btn--sm" href="#s-navigation">Demander une démo</a>
+          </div></div>
+        </div>
+        <h3 class="ds-sub">Onglets <small>indicateur animé · flèches ← → au clavier</small></h3>
+        <div class="ds-demo ds-demo--stack" data-code>
+          <div data-tabs>
+            <div class="tabs" aria-label="Exemple"><button class="tabs__tab" type="button" aria-selected="true" aria-controls="dt1">Agences</button><button class="tabs__tab" type="button" aria-selected="false" aria-controls="dt2">Promoteurs</button><button class="tabs__tab" type="button" aria-selected="false" aria-controls="dt3">Syndics</button></div>
+            <div class="tabpanel mt-4" id="dt1"><p>Contenu de l’onglet Agences.</p></div>
+            <div class="tabpanel mt-4" id="dt2" hidden><p>Contenu de l’onglet Promoteurs.</p></div>
+            <div class="tabpanel mt-4" id="dt3" hidden><p>Contenu de l’onglet Syndics.</p></div>
+          </div>
+          <div data-tabs>
+            <div class="tabs tabs--line"><button class="tabs__tab" type="button" aria-selected="true" aria-controls="dl1">Aperçu</button><button class="tabs__tab" type="button" aria-selected="false" aria-controls="dl2">Historique</button><button class="tabs__tab" type="button" aria-selected="false" aria-controls="dl3">Documents</button></div>
+            <div class="tabpanel mt-4" id="dl1"><p>Variante à filet, pour les pages de détail.</p></div>
+            <div class="tabpanel mt-4" id="dl2" hidden><p>Historique des paiements.</p></div>
+            <div class="tabpanel mt-4" id="dl3" hidden><p>Contrats et quittances.</p></div>
+          </div>
+        </div>
+        <h3 class="ds-sub">Accordéon (FAQ)</h3>
+        <div class="ds-demo ds-demo--stack" data-code>
+          <div class="accordion" data-single>
+            <div class="accordion__item"><button class="accordion__trigger" type="button">Faut-il tout migrer d’un coup ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>Non, on démarre par un seul sujet puis on étend.</p></div></div></div>
+            <div class="accordion__item"><button class="accordion__trigger" type="button">Et mes données ? <span class="accordion__icon"></span></button><div class="accordion__panel"><div class="accordion__inner"><p>Elles restent les vôtres et sont exportables à tout moment.</p></div></div></div>
+          </div>
+        </div>
+        <h3 class="ds-sub">Menu déroulant</h3>
+        <div class="ds-demo" style="min-height:17rem;align-items:flex-start" data-code>
+          <div class="dropdown" data-dropdown>
+            <button class="btn btn--secondary" type="button" aria-haspopup="menu" aria-expanded="false" data-dropdown-toggle>Pour qui ? <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+            <div class="dropdown__menu" role="menu">
+              <a class="dropdown__item" role="menuitem" href="#s-navigation"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span><span>Agences<small>Gérance, location, vente</small></span></a>
+              <a class="dropdown__item" role="menuitem" href="#s-navigation"><span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span><span>Promoteurs<small>Programmes et lots</small></span></a>
+              <a class="dropdown__item" role="menuitem" href="#s-navigation"><span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><span>Syndics<small>Charges et travaux</small></span></a>
+            </div>
+          </div>
+        </div>
+        <h3 class="ds-sub">Barre latérale de l’application</h3>
+        <div class="ds-demo ds-demo--solo ds-demo--sunken">
+          <div class="sidebar-preview"><div class="side-mini">
+            <a class="side-link" href="#s-navigation" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-dashboard"/></svg>Tableau de bord</a>
+            <a class="side-link" href="#s-navigation"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Biens et lots <span class="badge">124</span></a>
+            <a class="side-link" href="#s-navigation"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>Loyers et paiements <span class="badge">14</span></a>
+            <a class="side-link" href="#s-navigation"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Assistant IA</a>
+          </div></div>
+        </div>
+        <h3 class="ds-sub">Fil d’Ariane et pagination</h3>
+        <div class="ds-demo" data-code>
+          <ol class="breadcrumb"><li><a href="#s-navigation">Biens</a></li><li><a href="#s-navigation">Résidence Les Palmiers</a></li><li aria-current="page">Apt B12</li></ol>
+          <ul class="pagination" aria-label="Pagination"><li><button type="button" aria-label="Précédent">‹</button></li><li><button type="button" aria-current="page">1</button></li><li><button type="button">2</button></li><li><button type="button">3</button></li><li><button type="button" aria-label="Suivant">›</button></li></ul>
+        </div>
+      </section>
+
+      <!-- ============================== DONNÉES ============================== -->
+      <section class="ds-section" id="s-donnees">
+        <h2><span class="n">11</span>Tableaux &amp; listes</h2>
+        <p class="t-lead">Montants alignés à droite en chiffres tabulaires, statut en badge (couleur <em>et</em> texte), une action claire par ligne.</p>
+        <h3 class="ds-sub">Tableau</h3>
+        <div class="ds-demo ds-demo--solo ds-demo--stack" style="padding:0;border-radius:var(--radius-lg)" data-code>
+          <div class="table-wrap" style="border:0">
+            <table class="table">
+              <thead><tr><th>Locataire</th><th class="num">Montant dû</th><th>Retard</th><th>Statut</th><th><span class="sr-only">Action</span></th></tr></thead>
+              <tbody>
+                <tr><td><div class="who"><span class="avatar">MC</span><div><strong>Mariam Cissé</strong><span>Villa Mermoz · Dakar</span></div></div></td><td class="num"><strong>750 000</strong> <span class="text-muted t-xs">FCFA</span></td><td>41 j</td><td><span class="badge badge--danger badge--dot">Critique</span></td><td><div class="row-actions"><button class="btn btn--soft btn--sm" type="button">Relancer</button></div></td></tr>
+                <tr><td><div class="who"><span class="avatar avatar--olive">FS</span><div><strong>Fatou Sow</strong><span>Apt 3B · Almadies</span></div></div></td><td class="num"><strong>480 000</strong> <span class="text-muted t-xs">FCFA</span></td><td>21 j</td><td><span class="badge badge--warning badge--dot">En retard</span></td><td><div class="row-actions"><button class="btn btn--soft btn--sm" type="button">Relancer</button></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h3 class="ds-sub">Liste et fil d’activité</h3>
+        <div class="ds-demo ds-demo--grid" data-code>
+          <ul class="list"><li class="list__item"><span class="avatar avatar--terracotta">KY</span><div><strong>Villa Angré · Cocody</strong><span>Kouassi Yao</span></div><div class="end"><span class="badge badge--danger">12 j</span></div></li><li class="list__item"><span class="avatar avatar--olive">FS</span><div><strong>Apt 3B · Almadies</strong><span>Fatou Sow</span></div><div class="end"><span class="badge badge--warning">34 j</span></div></li></ul>
+          <ol class="timeline"><li class="is-new"><strong>Paiement Wave reçu</strong> — Awa T., 250 000 FCFA<time>Il y a 12 min</time></li><li class="is-alert"><strong>Loyer en retard</strong> — Mariam C.<time>Il y a 1 h</time></li><li><strong>Quittance envoyée</strong> — Ibrahim K.<time>Il y a 2 h</time></li></ol>
+        </div>
+      </section>
+
+      <!-- ============================== OVERLAYS ============================== -->
+      <section class="ds-section" id="s-overlays">
+        <h2><span class="n">12</span>Modale, toast, squelette, info-bulle</h2>
+        <h3 class="ds-sub">Modale <small>élément <code>&lt;dialog&gt;</code> natif : focus piégé, Échap, bascule en feuille depuis le bas sur mobile</small></h3>
+        <div class="ds-demo" data-code>
+          <button class="btn btn--primary" type="button" data-modal-open="ds-modal">Ouvrir la modale</button>
+        </div>
+        <h3 class="ds-sub">Toasts <small>coin bas-droit · disparaissent après 4 s</small></h3>
+        <div class="ds-demo">
+          <button class="btn btn--secondary" type="button" data-toast="success">Succès</button>
+          <button class="btn btn--secondary" type="button" data-toast="danger">Erreur</button>
+          <button class="btn btn--secondary" type="button" data-toast="info">Info</button>
+        </div>
+        <div class="ds-code" style="margin-top:0"><details open><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>Appel JavaScript</summary><pre><code>Immo.toast({ type: 'success', title: 'Loyer encaissé', message: '250 000 FCFA · Apt B12' });</code></pre></details></div>
+        <h3 class="ds-sub">Squelette de chargement <small>à la place des spinners pour les blocs de contenu</small></h3>
+        <div class="ds-demo ds-demo--grid" data-code>
+          <div class="stack" style="--gap:.6rem"><span class="skeleton" style="height:1.2rem;width:60%">.</span><span class="skeleton" style="height:2.4rem;width:40%">.</span><span class="skeleton" style="height:.9rem;width:80%">.</span></div>
+          <div class="cluster"><span class="skeleton" style="width:2.5rem;height:2.5rem;border-radius:50%">.</span><div class="stack" style="--gap:.4rem;flex:1"><span class="skeleton" style="height:.9rem;width:70%">.</span><span class="skeleton" style="height:.7rem;width:45%">.</span></div></div>
+        </div>
+        <h3 class="ds-sub">Info-bulle</h3>
+        <div class="ds-demo" data-code>
+          <button class="btn btn--soft" type="button" data-tip="Envoie un rappel WhatsApp">Survolez-moi</button>
+          <button class="btn btn--ghost btn--icon" type="button" aria-label="Aide" data-tip="Besoin d’aide ?"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button>
+        </div>
+      </section>
+
+      <!-- ============================== MOUVEMENT ============================== -->
+      <section class="ds-section" id="s-mouvement">
+        <h2><span class="n">13</span>Mouvement : principes &amp; tokens</h2>
+        <p class="t-lead">L’animation sert à <strong>guider l’œil</strong> (d’où vient l’information, qu’est-ce qui vient de changer), jamais à décorer. Seuls <code>opacity</code> et <code>transform</code> sont animés : fluide même sur un téléphone d’entrée de gamme.</p>
+
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Durée</th><th>Valeur</th><th>Usage</th></tr></thead><tbody>
+          <tr><td><code>--dur-instant</code></td><td>90 ms</td><td>Appui sur un bouton</td></tr>
+          <tr><td><code>--dur-fast</code></td><td>160 ms</td><td>Survol, changement de couleur, focus</td></tr>
+          <tr><td><code>--dur-base</code></td><td>280 ms</td><td>Menus, onglets, bascules, toasts</td></tr>
+          <tr><td><code>--dur-slow</code></td><td>480 ms</td><td>Modales, accordéons, entrée de page</td></tr>
+          <tr><td><code>--dur-slower</code></td><td>800 ms</td><td>Apparition au scroll, graphiques, compteurs</td></tr>
+          <tr><td><code>--dur-ambient</code></td><td>6 s +</td><td>Ambiance : flottement de la mascotte, vagues</td></tr>
+        </tbody></table></div>
+
+        <h3 class="ds-sub">Courbes d’accélération <small>cliquez sur « Rejouer »</small></h3>
+        <div class="motion-grid">
+          <div class="motion-card" data-ease="cubic-bezier(.22,1,.36,1)" data-dur="900"><div class="motion-card__stage"><div class="track"><i></i></div></div><h4>ease-out</h4><p><code>--ease-out</code> · entrées de contenu, apparition. Démarre vite, finit en douceur.</p><div class="cluster"><svg class="ease-svg" viewBox="0 0 100 100" data-bezier=".22,1,.36,1" aria-hidden="true"></svg><button class="btn btn--soft btn--sm" data-replay="track" type="button">Rejouer</button></div></div>
+          <div class="motion-card" data-ease="cubic-bezier(.65,0,.35,1)" data-dur="900"><div class="motion-card__stage"><div class="track"><i></i></div></div><h4>ease-in-out</h4><p><code>--ease-in-out</code> · déplacements entre deux positions.</p><div class="cluster"><svg class="ease-svg" viewBox="0 0 100 100" data-bezier=".65,0,.35,1" aria-hidden="true"></svg><button class="btn btn--soft btn--sm" data-replay="track" type="button">Rejouer</button></div></div>
+          <div class="motion-card" data-ease="cubic-bezier(.34,1.56,.64,1)" data-dur="900"><div class="motion-card__stage"><div class="track"><i></i></div></div><h4>spring</h4><p><code>--ease-spring</code> · petit rebond : interrupteurs, cases cochées, badges.</p><div class="cluster"><svg class="ease-svg" viewBox="0 0 100 100" data-bezier=".34,1.56,.64,1" aria-hidden="true"></svg><button class="btn btn--soft btn--sm" data-replay="track" type="button">Rejouer</button></div></div>
+          <div class="motion-card" data-ease="cubic-bezier(.5,0,.75,0)" data-dur="900"><div class="motion-card__stage"><div class="track"><i></i></div></div><h4>ease-in</h4><p><code>--ease-in</code> · sorties : un élément qui part accélère.</p><div class="cluster"><svg class="ease-svg" viewBox="0 0 100 100" data-bezier=".5,0,.75,0" aria-hidden="true"></svg><button class="btn btn--soft btn--sm" data-replay="track" type="button">Rejouer</button></div></div>
+        </div>
+
+        <h3 class="ds-sub">Motifs d’animation</h3>
+        <div class="motion-grid">
+          <div class="motion-card"><div class="motion-card__stage" id="reveal-demo" style="gap:.4rem;grid-auto-flow:column"><div class="rv" style="width:2.4rem;height:3.2rem;border-radius:8px;background:var(--olive-500)"></div><div class="rv" style="width:2.4rem;height:3.2rem;border-radius:8px;background:var(--sand-400)"></div><div class="rv" style="width:2.4rem;height:3.2rem;border-radius:8px;background:var(--terracotta-600)"></div></div><h4>Apparition au scroll</h4><p><code>data-reveal</code> : monte de 22 px et fond en 800 ms. <code>data-stagger</code> décale les enfants de 80 ms.</p><button class="btn btn--soft btn--sm" data-replay="reveal" type="button">Rejouer</button></div>
+          <div class="motion-card"><div class="motion-card__stage"><div class="stagger-demo" id="stagger-demo"><i style="--h:30%;--k:0"></i><i style="--h:55%;--k:1"></i><i style="--h:40%;--k:2"></i><i style="--h:80%;--k:3"></i><i style="--h:65%;--k:4"></i><i style="--h:100%;--k:5"></i></div></div><h4>Cascade (graphiques)</h4><p>Les barres poussent l’une après l’autre, 45–70 ms d’écart.</p><button class="btn btn--soft btn--sm" data-replay="stagger" type="button">Rejouer</button></div>
+          <div class="motion-card"><div class="motion-card__stage"><span class="num" data-count="48240000" data-duration="1600" id="count-demo" style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;letter-spacing:-.04em">0</span></div><h4>Compteur</h4><p><code>data-count</code> : le chiffre grimpe en 1,4 s (ease-out expo) quand il devient visible.</p><button class="btn btn--soft btn--sm" data-replay="count" type="button">Rejouer</button></div>
+          <div class="motion-card"><div class="motion-card__stage"><div class="dot-demo" style="animation:float 4s ease-in-out infinite"></div></div><h4>Flottement (ambiance)</h4><p>Mascotte et téléphone : mouvement lent de 4–6 s, désactivé en « mouvement réduit ».</p></div>
+          <div class="motion-card"><div class="motion-card__stage"><button class="btn btn--primary btn--sm" type="button">Survolez-moi</button></div><h4>Survol et appui</h4><p>Survol : −1 px. Appui : 97 %. Flèche : +3 px vers la droite.</p></div>
+          <div class="motion-card"><div class="motion-card__stage"><div class="stack" style="--gap:.5rem;width:70%"><span class="skeleton" style="height:.9rem">.</span><span class="skeleton" style="height:.9rem;width:60%">.</span></div></div><h4>Chargement</h4><p>Reflet (shimmer) de 1,4 s. Jamais de spinner plein écran.</p></div>
+        </div>
+        <div class="ds-note ds-note--ok"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><div><strong>Accessibilité :</strong> avec <code>prefers-reduced-motion: reduce</code>, toutes les animations sont ramenées à ~0 ms et les contenus apparaissent immédiatement (règle globale dans <code>base.css</code>). Testez-le dans les réglages d’accessibilité de votre système.</div></div>
+      </section>
+
+      <!-- ============================== PARCOURS ============================== -->
+      <section class="ds-section" id="s-parcours">
+        <h2><span class="n">14</span>Parcours &amp; transitions de page</h2>
+        <p class="t-lead">Les pages s’enchaînent par un fondu (sortie 220 ms, entrée 480 ms) et un léger glissement du contenu. Un menu flottant « Prototype » permet aux équipes de parcourir le flux complet.</p>
+        <div class="cluster mt-6" style="gap:.6rem">
+          <span class="badge badge--dark">1 · Découvrir</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          <span class="badge badge--dark">2 · Comprendre</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          <span class="badge badge--dark">3 · Demander une démo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          <span class="badge badge--dark">4 · Utiliser au quotidien</span>
+        </div>
+        <div class="page-cards">
+          <a class="page-card" href="index.html" style="background:var(--grad-warm)"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span><h4>Site vitrine</h4><p>Hero animé (mascotte, dunes en parallaxe), promesse, fonctions, profils, FAQ, demande de démo.</p><span class="btn btn--link btn--sm">Ouvrir <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></a>
+          <a class="page-card" href="fonctionnalites.html" style="background:var(--grad-terracotta)"><span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span><h4>Page fonctionnalité</h4><p>Parcours animé d’un loyer en 5 étapes, blocs de détail, simulateur de gain.</p><span class="btn btn--link btn--sm">Ouvrir <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></a>
+          <a class="page-card" href="dashboard.html" style="background:var(--grad-olive)"><span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-dashboard"/></svg></span><h4>Tableau de bord KPI</h4><p>Indicateurs, graphiques, suggestions IA à valider, loyers en retard, formulaire d’ajout de bien.</p><span class="btn btn--link btn--sm">Ouvrir <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></a>
+        </div>
+        <h3 class="ds-sub">Séquence d’animation d’une page</h3>
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Moment</th><th>Ce qui se passe</th><th>Durée</th></tr></thead><tbody>
+          <tr><td>Clic sur un lien interne</td><td>Fondu sortant de la page (<code>body.is-leaving</code>), puis navigation</td><td>220 ms</td></tr>
+          <tr><td>Arrivée</td><td>Fondu entrant du <code>body</code>, glissement de <code>main</code> de 14 px</td><td>480–700 ms</td></tr>
+          <tr><td>Hero du site</td><td>Cascade titre → texte → boutons → mascotte (110 ms d’écart), flou qui se dissipe</td><td>1 s</td></tr>
+          <tr><td>Scroll</td><td>Vagues en parallaxe (vitesses 0,04 → 0,14), mascotte qui « plonge » dans les dunes</td><td>continu</td></tr>
+          <tr><td>Dashboard</td><td>Squelette 1 s → compteurs, courbes qui se dessinent, barres en cascade</td><td>1,5 s</td></tr>
+          <tr><td>Filtre / période</td><td>Squelette 0,5 s puis nouvelles valeurs animées (pas de saut brutal)</td><td>520 ms</td></tr>
+          <tr><td>Validation d’une suggestion IA</td><td>Toast de confirmation + la carte se replie</td><td>520 ms</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <!-- ============================== MASCOTTE ============================== -->
+      <section class="ds-section" id="s-mascotte">
+        <h2><span class="n">15</span>Mascotte &amp; illustration</h2>
+        <p class="t-lead">Une illustration d’immeuble colorée (<code>assets/img/mascot.png</code>) qui flotte doucement au-dessus de dunes. Le décor de collines ancre l’identité dans des teintes de terre.</p>
+        <div class="ds-demo ds-demo--solo grain" style="position:relative;overflow:hidden;min-height:20rem;background:linear-gradient(180deg,#f9edc6,#fefae0 60%,#f6e6bb);justify-content:center;align-items:flex-start;padding-top:2.5rem">
+          <div class="mascot" style="position:relative;left:auto;bottom:auto;margin:0;--dive:0px" aria-hidden="true">
+            <div class="mascot__float"><img src="assets/img/mascot.png" alt="" width="100" height="100" decoding="async"></div>
+            <span class="mascot__shadow"></span>
+          </div>
+          <div class="waves waves--sm" aria-hidden="true" style="height:130px">
+            <div class="wave wave--1"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#edcda6" fill-opacity=".8" d="M0 120C180 70 340 40 560 78c240 42 420 72 640 22 120-28 190-40 240-30v230H0z"/></svg></div>
+            <div class="wave wave--2"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#929a74" d="M0 150c220-40 420-60 640-22 220 38 420 48 620 0 90-22 140-28 180-24v216H0z"/></svg></div>
+            <div class="wave wave--3"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#606c38" d="M0 130c200 38 400 50 620 20 240-34 420-50 620-12 100 20 160 22 200 12v170H0z"/></svg></div>
+            <div class="wave wave--4"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#283618" d="M0 170c240-30 460-42 700-10 240 32 420 30 600 0 70-12 110-14 140-10v170H0z"/></svg></div>
+          </div>
+        </div>
+        <div class="do-dont">
+          <div class="do"><strong>Où l’utiliser</strong><ul><li>Hero du site, onboarding, états vides, pages d’erreur</li><li>Messages de réussite (« Tout est à jour »)</li></ul></div>
+          <div class="dont"><strong>Où l’éviter</strong><ul><li>Écrans de données denses (tableaux, rapports)</li><li>Messages d’erreur graves ou de facturation</li></ul></div>
+        </div>
+        <p class="t-small text-muted mt-4">Le grain papier (<code>.grain</code>) et les dégradés flous donnent la texture « sable ». L’image est insérée par le bloc <code>.mascot</code> (voir <code>index.html</code>) : le flottement vient de <code>.mascot__float</code>.</p>
+      </section>
+
+      <!-- ============================== AFRIQUE ============================== -->
+      <section class="ds-section" id="s-afrique">
+        <h2><span class="n">16</span>Marché africain : conventions produit</h2>
+        <p class="t-lead">Recommandations de départ pour un produit pensé pour l’Afrique francophone, à valider avec vos premiers clients.</p>
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Sujet</th><th>Convention</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td><strong>Monnaie</strong></td><td>FCFA (XOF / XAF), sans décimale, espace fine insécable entre milliers, unité après le montant</td><td><code>250 000 FCFA</code></td></tr>
+          <tr><td><strong>Grands montants</strong></td><td>« k » et « M » dans les KPI et graphiques, montant complet dans les tableaux</td><td><code>48,2 M FCFA</code></td></tr>
+          <tr><td><strong>Autres devises</strong></td><td>Prévoir dès le départ ₦ (Nigeria), GH₵ (Ghana), CDF (RDC) : ne jamais coder « FCFA » en dur</td><td><code>Intl.NumberFormat</code></td></tr>
+          <tr><td><strong>Téléphone</strong></td><td>Indicatif pays séparé du numéro, saisie en groupes locaux</td><td><code>+225 07 00 00 00 00</code></td></tr>
+          <tr><td><strong>Dates</strong></td><td>jj/mm/aaaa, mois en toutes lettres dans les textes</td><td><code>6 novembre 2026</code></td></tr>
+          <tr><td><strong>Paiements</strong></td><td>Mobile Money en premier (Orange Money, MTN MoMo, Wave, Moov, M-Pesa), puis virement et espèces</td><td>Voir le dashboard</td></tr>
+          <tr><td><strong>Canal de relance</strong></td><td>WhatsApp d’abord, SMS en repli, e-mail ensuite</td><td>Page fonctionnalité</td></tr>
+          <tr><td><strong>Réseau</strong></td><td>Page &lt; 150 Ko hors images, aucune librairie JS, SVG inline, images WebP, polices auto-hébergées en production</td><td>Ce design system</td></tr>
+          <tr><td><strong>Langues</strong></td><td>Français par défaut ; anglais et portugais à prévoir : textes dans des fichiers de traduction, boutons en flexible</td><td>—</td></tr>
+        </tbody></table></div>
+        <h3 class="ds-sub">Essayez le formatage</h3>
+        <div class="ds-demo ds-demo--grid ds-demo--sand">
+          <div class="field"><label class="field__label" for="fmt-amount">Saisissez un montant</label><div class="affix"><input class="control num" id="fmt-amount" inputmode="numeric" value="48240000"><span class="affix__add">FCFA</span></div></div>
+          <div><span class="t-xs text-muted">Affichage complet</span><p class="num" id="fmt-out" style="font-family:var(--font-display);font-weight:800;font-size:1.6rem;letter-spacing:-.04em"></p><span class="t-xs text-muted">Affichage compact</span><p class="num" id="fmt-short" style="font-family:var(--font-display);font-weight:800;font-size:1.6rem;letter-spacing:-.04em;color:var(--accent-text)"></p></div>
+        </div>
+      </section>
+
+      <!-- ============================== ACCESSIBILITÉ ============================== -->
+      <section class="ds-section" id="s-a11y">
+        <h2><span class="n">17</span>Accessibilité</h2>
+        <div class="grid grid--2 mt-6" style="--gap:1rem">
+          <div class="card"><h4>Contraste et couleur</h4><p class="card__text mt-2">Texte courant ≥ 4,5 : 1 (voir tableau en 01). Un statut n’est jamais transmis par la couleur seule : badge = pastille + texte.</p></div>
+          <div class="card"><h4>Clavier et focus</h4><p class="card__text mt-2">Anneau de focus terracotta visible partout. Onglets en flèches, modale native (focus piégé, Échap), lien « Aller au contenu ».</p></div>
+          <div class="card"><h4>Tactile</h4><p class="card__text mt-2">Cibles de 44 px minimum sur mobile (boutons, cases, lignes de liste). Espacement suffisant entre actions voisines.</p></div>
+          <div class="card"><h4>Mouvement</h4><p class="card__text mt-2">Respect de <code>prefers-reduced-motion</code>. Aucune animation clignotante. Les informations ne dépendent jamais d’une animation.</p></div>
+          <div class="card"><h4>Formulaires</h4><p class="card__text mt-2">Chaque champ a un <code>&lt;label&gt;</code> lié, erreurs en texte clair avec <code>aria-invalid</code>, champs obligatoires signalés par * et par le texte.</p></div>
+          <div class="card"><h4>Sémantique</h4><p class="card__text mt-2">Titres hiérarchisés, <code>&lt;nav&gt;</code> libellés, icônes décoratives en <code>aria-hidden</code>, boutons icône avec <code>aria-label</code>.</p></div>
+        </div>
+      </section>
+
+      <!-- ============================== INTÉGRATION ============================== -->
+      <section class="ds-section" id="s-integration">
+        <h2><span class="n">18</span>Intégration (développeurs)</h2>
+        <h3 class="ds-sub">Squelette d’une page</h3>
+        <details class="ds-code" open style="border-top:1px solid var(--border);border-radius:var(--radius-lg)"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>HTML</summary><pre><code>&lt;!doctype html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"&gt;
+  &lt;link rel="stylesheet" href="assets/css/tokens.css"&gt;
+  &lt;link rel="stylesheet" href="assets/css/base.css"&gt;
+  &lt;link rel="stylesheet" href="assets/css/components.css"&gt;
+  &lt;!-- + site.css (marketing) ou app.css (produit) --&gt;
+  &lt;script&gt;document.documentElement.classList.add('js')&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src="assets/js/icons.js"&gt;&lt;/script&gt;   &lt;!-- sprite d'icônes, tout en haut du body --&gt;
+  &lt;main id="main"&gt; … &lt;/main&gt;
+  &lt;script src="assets/js/main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></details>
+
+        <h3 class="ds-sub">Attributs <code>data-*</code> pris en charge par <code>main.js</code></h3>
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Attribut</th><th>Effet</th></tr></thead><tbody>
+          <tr><td><code>data-reveal</code> <small>(left · right · scale · fade)</small></td><td>Apparition au scroll. <code>data-stagger</code> sur le parent décale les enfants.</td></tr>
+          <tr><td><code>data-count</code> + <code>data-decimals · data-prefix · data-suffix · data-duration</code></td><td>Compteur animé</td></tr>
+          <tr><td><code>data-inview</code></td><td>Ajoute <code>.is-visible</code> quand l’élément entre à l’écran (animations CSS déclenchées au scroll)</td></tr>
+          <tr><td><code>data-tabs</code></td><td>Initialise des onglets (voir 10). <code>data-tab-open="idPanneau"</code> ouvre un onglet depuis n’importe où.</td></tr>
+          <tr><td><code>data-modal-open="id"</code> · <code>data-modal-close</code></td><td>Ouvre / ferme une <code>&lt;dialog class="modal"&gt;</code></td></tr>
+          <tr><td><code>data-dropdown</code> + <code>data-dropdown-toggle</code></td><td>Menu déroulant (clic, Échap, clic extérieur)</td></tr>
+          <tr><td><code>data-validate</code> (sur <code>&lt;form&gt;</code>)</td><td>Validation en français, <code>data-success-toast</code> pour le message de réussite, <code>data-form-card</code> sur le parent pour afficher un écran de succès</td></tr>
+          <tr><td><code>data-copy="texte"</code></td><td>Copie dans le presse-papiers + toast</td></tr>
+          <tr><td><code>data-speed</code> · <code>data-mascot</code></td><td>Parallaxe au scroll (vagues) · plongée de la mascotte</td></tr>
+          <tr><td><code>data-tip="texte"</code></td><td>Info-bulle CSS</td></tr>
+          <tr><td><code>data-proto-nav="off"</code> (sur <code>&lt;body&gt;</code>)</td><td>Masque le menu flottant « Prototype »</td></tr>
+        </tbody></table></div>
+
+        <h3 class="ds-sub">API JavaScript <small><code>window.Immo</code></small></h3>
+        <div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>Fonction</th><th>Rôle</th></tr></thead><tbody>
+          <tr><td><code>Immo.toast({ type, title, message, duration })</code></td><td>Notification temporaire (<code>success</code> · <code>danger</code> · <code>info</code>)</td></tr>
+          <tr><td><code>Immo.openModal(id)</code> · <code>Immo.closeModal(id)</code></td><td>Contrôle d’une modale</td></tr>
+          <tr><td><code>Immo.fcfa(n)</code> · <code>Immo.num(n, decimales)</code></td><td>Formatage fr-FR des montants et nombres</td></tr>
+          <tr><td><code>Immo.animateCount(el)</code></td><td>Rejoue un compteur (<code>data-from</code> → <code>data-count</code>)</td></tr>
+        </tbody></table></div>
+
+        <h3 class="ds-sub">Conventions</h3>
+        <div class="do-dont">
+          <div class="do"><strong>Nommage CSS</strong><ul><li><code>.bloc</code> · <code>.bloc__element</code> · <code>.bloc--variante</code> · <code>.is-etat</code></li><li>Un composant = un bloc, sans dépendre de son parent</li><li>Valeurs uniquement via <code>var(--token)</code></li></ul></div>
+          <div class="do"><strong>À prévoir pour la production</strong><ul><li>Auto-héberger les polices (WOFF2, sous-ensemble latin)</li><li>Passer les pages en composants (React/Vue/Svelte) en gardant ces classes et tokens</li><li>Brancher de vraies données et un i18n (FR/EN/PT)</li></ul></div>
+        </div>
+        <div class="ds-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><div><strong>Maquette :</strong> les données (noms, montants, graphiques) sont fictives et calculées dans le navigateur. Le nom « Immo+ » est provisoire : il se change à un seul endroit par page (logo) et dans <code>icons.js</code> (symbole <code>#i-logo</code>).</div></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modale de démonstration -->
+  <dialog class="modal" id="ds-modal" aria-labelledby="dm-title">
+    <div class="modal__panel">
+      <div class="modal__head"><div><h2 id="dm-title" style="font-size:var(--fs-2xl)">Supprimer ce locataire ?</h2><p class="text-muted t-small mt-2">Son historique de paiements sera archivé, pas effacé.</p></div><button class="btn btn--ghost btn--icon btn--sm" type="button" data-modal-close aria-label="Fermer"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+      <div class="modal__body"><div class="alert alert--warning"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><div><strong>Un bail est encore actif</strong><p>Villa Angré, Cocody · jusqu’au 30 nov.</p></div></div></div>
+      <div class="modal__foot"><button class="btn btn--ghost" type="button" data-modal-close>Annuler</button><button class="btn btn--danger" type="button" data-modal-close>Archiver le locataire</button></div>
+    </div>
+  </dialog>
+
+  <!-- docs.js AVANT main.js : il capture le code des démos avant leur enrichissement -->
+  <script src="assets/js/docs.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

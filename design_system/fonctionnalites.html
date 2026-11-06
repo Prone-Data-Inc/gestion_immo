@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loyers et paiements — Immo+</title>
+  <meta name="description" content="Appels de loyer, relances WhatsApp, paiements Mobile Money, rapprochement et quittances : Immo+ automatise l’encaissement des loyers.">
+  <meta name="theme-color" content="#fefae0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23283618'/%3E%3Cpath d='M7 15.2 16 7.8l9 7.4M9.8 14.2V24h12.4v-9.8' fill='none' stroke='%23fefae0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 17.2v4.6M13.7 19.5h4.6' stroke='%23dda15e' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <script src="assets/js/icons.js"></script>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="Immo+ — accueil"><svg class="logo__svg" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Immo<b>+</b></span></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="index.html">Accueil</a>
+        <a class="nav__link" href="index.html#fonctions">Fonctions</a>
+        <a class="nav__link" href="fonctionnalites.html" aria-current="page">Loyers &amp; paiements</a>
+        <a class="nav__link" href="dashboard.html">Tableau de bord</a>
+        <a class="nav__link" href="index.html#faq">Questions</a>
+        <a class="btn btn--primary btn--sm nav__cta-mobile" href="index.html#demo">Demander une démo</a>
+      </nav>
+      <div class="site-header__cta"><a class="btn btn--primary btn--sm" href="index.html#demo">Demander une démo</a></div>
+      <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon icon--close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero hero--compact grain">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--a" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--b" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div class="hero-split">
+          <div>
+            <ol class="breadcrumb crumbs hero-in" style="--i:0"><li><a href="index.html#fonctions">Fonctions</a></li><li aria-current="page">Loyers et paiements</li></ol>
+            <p class="eyebrow hero-in" style="--i:1">Loyers et paiements</p>
+            <h1 class="hero__title hero-in" style="--i:2; margin-top:.8rem">Encaissez vos loyers. <span class="mark">Sans courir</span> après personne.</h1>
+            <p class="hero__lead hero-in" style="--i:3">Appels de loyer, relances WhatsApp, paiements Mobile Money, quittances : Immo+ prépare tout, vous validez en un clic.</p>
+            <div class="hero__actions hero-in" style="--i:4">
+              <a class="btn btn--primary btn--lg" href="index.html#demo">Demander une démo</a>
+              <a class="btn btn--link" href="#simulateur">Estimer mon gain <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+            </div>
+          </div>
+          <div class="hero-in" style="--i:5">
+            <div class="phone" aria-hidden="true">
+              <div class="phone__screen">
+                <div class="phone__head"><small>Loyers encaissés · novembre</small><strong class="num" id="phone-total">48 240 000</strong><small>FCFA · 94 % du prévu</small></div>
+                <div class="phone__list" id="phone-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="waves" aria-hidden="true">
+        <div class="wave wave--1" data-speed="0.14"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#edcda6" fill-opacity=".8" d="M0 120C180 70 340 40 560 78c240 42 420 72 640 22 120-28 190-40 240-30v230H0z"/></svg></div>
+        <div class="wave wave--2" data-speed="0.1"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#e5b782" d="M0 150c220-40 420-60 640-22 220 38 420 48 620 0 90-22 140-28 180-24v216H0z"/></svg></div>
+        <div class="wave wave--3" data-speed="0.07"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#929a74" d="M0 130c200 38 400 50 620 20 240-34 420-50 620-12 100 20 160 22 200 12v170H0z"/></svg></div>
+        <div class="wave wave--4" data-speed="0.04"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#606c38" d="M0 170c240-30 460-42 700-10 240 32 420 30 600 0 70-12 110-14 140-10v170H0z"/></svg></div>
+        <div class="wave wave--5"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#283618" d="M0 200c260-30 520-40 760-16 240 24 440 22 680-6v142H0z"/></svg></div>
+      </div>
+    </section>
+
+    <!-- ============================== BANDEAU SOMBRE ============================== -->
+    <section class="statement" id="vision">
+      <div class="statement__glow" aria-hidden="true"></div>
+      <div class="container">
+        <h2 data-reveal>Chaque loyer suit le même chemin, sans que vous y touchiez.</h2>
+        <p class="statement__lead" data-reveal style="--i:1">Immo+ prépare les appels de loyer, relance les retardataires et associe chaque paiement au bon locataire. Vous gardez la main sur les décisions.</p>
+        <div class="pillars">
+          <div class="pillar" data-reveal style="--i:0" data-inview><span class="num">01</span><h3>Immo+ prépare.</h3><p>Appels de loyer, rappels et quittances sont générés à votre place.</p></div>
+          <div class="pillar" data-reveal style="--i:1" data-inview><span class="num">02</span><h3>Il relance et rapproche.</h3><p>Relances polies, paiements Mobile Money associés au bon loyer.</p></div>
+          <div class="pillar" data-reveal style="--i:2" data-inview><span class="num">03</span><h3>Vous validez.</h3><p>Les cas ambigus et les mises en demeure vous sont soumis.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PARCOURS ANIMÉ ============================== -->
+    <section class="section bg-grid" id="parcours">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Le parcours d’un loyer</span>
+          <h2 class="mt-2">De l’appel de loyer à la quittance, sans friction.</h2>
+          <p>Cinq étapes qui s’enchaînent toutes seules. Cliquez sur une étape pour la voir de plus près.</p>
+        </div>
+
+        <div class="flow" id="flow" data-reveal>
+          <div class="flow__steps" role="tablist" aria-label="Étapes du parcours">
+            <button class="flow__step is-active" role="tab" aria-selected="true" type="button"><span class="flow__num">1</span><h3>L’appel de loyer part tout seul</h3><p>Le 1er du mois, chaque locataire reçoit son appel par WhatsApp ou SMS, avec le bon montant, charges comprises.</p><span class="flow__bar"><i></i></span></button>
+            <button class="flow__step" role="tab" aria-selected="false" type="button"><span class="flow__num">2</span><h3>Un rappel avant l’échéance</h3><p>Un message doux quelques jours avant, avec un lien pour payer. Le ton et le moment se règlent.</p><span class="flow__bar"><i></i></span></button>
+            <button class="flow__step" role="tab" aria-selected="false" type="button"><span class="flow__num">3</span><h3>Le paiement arrive par Mobile Money</h3><p>Orange Money, MTN MoMo, Wave ou virement : le paiement est détecté dès qu’il arrive.</p><span class="flow__bar"><i></i></span></button>
+            <button class="flow__step" role="tab" aria-selected="false" type="button"><span class="flow__num">4</span><h3>Le rapprochement se fait seul</h3><p>Chaque paiement est associé au bon loyer. Les cas douteux sont signalés pour que vous tranchiez.</p><span class="flow__bar"><i></i></span></button>
+            <button class="flow__step" role="tab" aria-selected="false" type="button"><span class="flow__num">5</span><h3>La quittance est envoyée</h3><p>Une quittance claire part au locataire et le propriétaire voit son compte rendu à jour.</p><span class="flow__bar"><i></i></span></button>
+          </div>
+
+          <div class="flow__stage" aria-live="polite">
+            <!-- 1 -->
+            <div class="flow__panel is-active"><div class="card">
+              <div class="cluster" style="justify-content:space-between"><strong>Appels de loyer · novembre</strong><span class="badge badge--info badge--dot">Programmé</span></div>
+              <p class="t-small text-muted mt-2">Envoi le 1er à 8 h, par WhatsApp puis SMS.</p>
+              <ul class="list mt-4">
+                <li class="list__item"><span class="icon-tile icon-tile--olive" style="width:2rem;height:2rem"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span><div><strong>124 baux à facturer</strong><span>Montants calculés, charges comprises</span></div></li>
+                <li class="list__item"><span class="icon-tile icon-tile--olive" style="width:2rem;height:2rem"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span><div><strong>124 messages prêts</strong><span>Dans la langue du locataire</span></div></li>
+                <li class="list__item"><span class="icon-tile" style="width:2rem;height:2rem"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-banknote"/></svg></span><div><strong>51,3 M FCFA attendus</strong><span>Prévision du mois</span></div></li>
+              </ul>
+            </div></div>
+            <!-- 2 -->
+            <div class="flow__panel"><div class="chat">
+              <div class="bubble bubble--out" style="--k:0">Bonjour Awa, votre loyer de novembre (250 000 FCFA) est dû le 5. Vous pouvez payer ici en un clic.<small>Immo+ · Agence Horizon · 08:00</small></div>
+              <div class="bubble bubble--in" style="--k:1">Merci, je règle ce soir avec Orange Money.<small>Awa Traoré · 12:41</small></div>
+              <div class="bubble bubble--out" style="--k:2">Parfait, merci Awa !<small>Immo+ · 12:41</small></div>
+            </div></div>
+            <!-- 3 -->
+            <div class="flow__panel"><div class="card" style="text-align:center">
+              <span class="icon-tile icon-tile--olive" style="width:3.25rem;height:3.25rem;margin-inline:auto"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-smartphone"/></svg></span>
+              <p class="t-small text-muted mt-4">Orange Money · Awa Traoré</p>
+              <p class="num" style="font-family:var(--font-display);font-weight:800;font-size:2.4rem;letter-spacing:-.045em;color:var(--text-strong);line-height:1.1">250 000 <small style="font-size:.4em;color:var(--text-muted);letter-spacing:0">FCFA</small></p>
+              <p class="mt-4"><span class="badge badge--success badge--dot">Paiement reçu</span></p>
+              <p class="t-xs text-muted mt-2">Réf. TX-8841-2207 · 12:43</p>
+            </div></div>
+            <!-- 4 -->
+            <div class="flow__panel"><div class="match">
+              <div class="match__row"><div class="match__cell"><strong>250 000</strong><span>Orange Money · Awa T.</span></div><span class="match__link" style="--k:0"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div class="match__cell"><strong>Apt B12</strong><span>Loyer nov. · 250 000</span></div></div>
+              <div class="match__row"><div class="match__cell"><strong>400 000</strong><span>Wave · Ibrahim K.</span></div><span class="match__link" style="--k:1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div class="match__cell"><strong>Rés. Palmiers</strong><span>Loyer nov. · 400 000</span></div></div>
+              <div class="match__row"><div class="match__cell"><strong>120 000</strong><span>Wave · Fatou S.</span></div><span class="match__link match__link--warn" style="--k:2"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span><div class="match__cell"><strong>Apt 3B</strong><span>Partiel · reste 360 000</span></div></div>
+            </div></div>
+            <!-- 5 -->
+            <div class="flow__panel"><div class="receipt">
+              <span class="stamp">Payé</span>
+              <strong style="font-family:var(--font-display);font-size:var(--fs-lg)">Quittance de loyer</strong>
+              <p class="t-xs text-muted">N° Q-2026-11-0412</p>
+              <dl><div><dt>Locataire</dt><dd>Awa Traoré</dd></div><div><dt>Bien</dt><dd>Apt B12 · Riviera 3</dd></div><div><dt>Période</dt><dd>Novembre 2026</dd></div><div class="total"><dt>Montant réglé</dt><dd>250 000 FCFA</dd></div></dl>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== BLOCS DÉTAIL ============================== -->
+    <section class="section" style="padding-top:clamp(2rem,4vw,3rem)">
+      <div class="container">
+        <div class="feature-block">
+          <div class="feature-block__text" data-reveal="left">
+            <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></span>
+            <h2 class="mt-4">Des relances qui restent polies.</h2>
+            <p>Vous définissez le scénario une fois. Immo+ prépare chaque message, vous validez, et personne n’a plus à « courir après » un loyer.</p>
+            <ul>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Rappels avant et après l’échéance</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>WhatsApp, SMS ou e-mail, selon le locataire</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Ton et fréquence réglables par vous</li>
+            </ul>
+          </div>
+          <div class="feature-block__visual" data-reveal="right" data-inview>
+            <div class="stack" style="--gap:.7rem">
+              <div class="mini mini--row"><span class="icon-tile icon-tile--olive" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg></span><div><strong>3 jours avant</strong><span>Rappel doux · WhatsApp</span></div><span class="badge badge--success badge--dot">Auto</span></div>
+              <div class="mini mini--row"><span class="icon-tile" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><div><strong>1 jour après</strong><span>Relance · SMS</span></div><span class="badge badge--success badge--dot">Auto</span></div>
+              <div class="mini mini--row"><span class="icon-tile icon-tile--terracotta" style="width:2.2rem;height:2.2rem"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span><div><strong>7 jours après</strong><span>Mise en demeure</span></div><span class="badge badge--warning badge--dot">À valider</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-block feature-block--rev">
+          <div class="feature-block__text" data-reveal="right">
+            <span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg></span>
+            <h2 class="mt-4">Chaque paiement trouve son loyer.</h2>
+            <p>Fini les relevés Mobile Money recopiés à la main. Les paiements reçus sont associés au bon locataire ; seuls les cas ambigus vous sont soumis.</p>
+            <ul>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Paiements partiels et avances gérés</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Paiements sans référence signalés, jamais perdus</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Historique complet par locataire et par bien</li>
+            </ul>
+          </div>
+          <div class="feature-block__visual" data-reveal="left" data-inview style="background:var(--grad-warm)">
+            <div class="match">
+              <div class="match__row"><div class="match__cell"><strong>300 000</strong><span>MTN MoMo · J-M. M.</span></div><span class="match__link" style="--k:0"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div class="match__cell"><strong>Studio Bonanjo</strong><span>Loyer nov.</span></div></div>
+              <div class="match__row"><div class="match__cell"><strong>650 000</strong><span>Orange Money · K. Yao</span></div><span class="match__link" style="--k:1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div class="match__cell"><strong>Villa Angré</strong><span>Loyer nov.</span></div></div>
+              <div class="match__row"><div class="match__cell"><strong>75 000</strong><span>Wave · sans réf.</span></div><span class="match__link match__link--warn" style="--k:2"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span><div class="match__cell"><strong>À attribuer</strong><span>2 suggestions</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-block__text" data-reveal="left">
+            <span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg></span>
+            <h2 class="mt-4">Des quittances sans effort.</h2>
+            <p>Chaque loyer réglé génère sa quittance, envoyée au locataire. Le propriétaire, lui, reçoit son compte rendu sans que vous ayez à le saisir.</p>
+            <ul>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Quittances aux couleurs de votre agence</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Envoi par WhatsApp ou e-mail</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>Comptes rendus de gérance prêts à envoyer</li>
+            </ul>
+          </div>
+          <div class="feature-block__visual" data-reveal="right" data-inview style="background:var(--grad-sand)">
+            <div class="receipt">
+              <span class="stamp">Payé</span>
+              <strong style="font-family:var(--font-display);font-size:var(--fs-lg)">Quittance de loyer</strong>
+              <p class="t-xs text-muted">N° Q-2026-11-0398</p>
+              <dl><div><dt>Locataire</dt><dd>Kouassi Yao</dd></div><div><dt>Bien</dt><dd>Villa Angré · Cocody</dd></div><div><dt>Période</dt><dd>Novembre 2026</dd></div><div class="total"><dt>Montant réglé</dt><dd>650 000 FCFA</dd></div></dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SIMULATEUR ============================== -->
+    <section class="section bg-grid" id="simulateur" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Simulateur</span>
+          <h2 class="mt-2">Estimez ce que vous récupérez.</h2>
+          <p>Déplacez les curseurs selon votre agence. Le résultat est une estimation, pas une promesse.</p>
+        </div>
+        <div class="sim" data-reveal>
+          <form class="card sim__form" onsubmit="return false" aria-label="Simulateur de gain">
+            <div class="sim__row"><label for="s-biens">Biens en gestion <output for="s-biens" id="o-biens">60</output></label><input class="range" type="range" id="s-biens" min="5" max="500" step="5" value="60"></div>
+            <div class="sim__row"><label for="s-loyer">Loyer moyen <output for="s-loyer" id="o-loyer">250 000 FCFA</output></label><input class="range" type="range" id="s-loyer" min="50000" max="2000000" step="10000" value="250000"></div>
+            <div class="sim__row"><label for="s-imp">Part de loyers impayés aujourd’hui <output for="s-imp" id="o-imp">8 %</output></label><input class="range" type="range" id="s-imp" min="0" max="30" step="1" value="8"></div>
+            <div class="sim__row"><label for="s-h">Heures de relance et de saisie par semaine <output for="s-h" id="o-h">10 h</output></label><input class="range" type="range" id="s-h" min="0" max="40" step="1" value="10"></div>
+          </form>
+          <div class="card card--dark sim__result" aria-live="polite">
+            <div><span class="sim__lbl">Loyers récupérés par mois</span><div class="sim__big" id="r-fcfa">0<small>FCFA</small></div></div>
+            <div><span class="sim__lbl">Heures gagnées par mois</span><div class="sim__big" id="r-h">0<small>heures</small></div></div>
+            <p class="sim__note">Hypothèses : 40 % des impayés récupérés grâce aux relances et 60 % du temps de relance automatisé. Vos résultats réels dépendront de votre situation.</p>
+            <a class="btn btn--light" href="index.html#demo">Valider ces chiffres avec une démo <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CTA ============================== -->
+    <section class="cta-band">
+      <div class="container text-center" data-reveal>
+        <h2 style="max-width:18ch;margin-inline:auto">Prêt à voir vos loyers se suivre tout seuls ?</h2>
+        <p class="cta-band__lead" style="margin-inline:auto">Parlons de votre parc : 20 minutes en visio, avec vos propres chiffres.</p>
+        <div class="hero__actions" style="margin-top:2rem">
+          <a class="btn btn--light btn--lg" href="index.html#demo">Demander une démo</a>
+          <a class="btn btn--outline-light btn--lg" href="dashboard.html">Voir le tableau de bord</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div><a class="logo logo--light" href="index.html"><svg class="logo__svg" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Immo<b>+</b></span></a><p style="margin-top:1rem;max-width:20rem">Le cockpit de la gestion immobilière pour l’Afrique. Moins d’administratif, plus de rentabilité.</p></div>
+        <div><h4>Produit</h4><ul><li><a href="index.html#fonctions">Fonctions</a></li><li><a href="fonctionnalites.html">Loyers &amp; paiements</a></li><li><a href="dashboard.html">Tableau de bord</a></li></ul></div>
+        <div><h4>Pour qui</h4><ul><li><a href="index.html#pour-qui">Agences</a></li><li><a href="index.html#pour-qui">Promoteurs</a></li><li><a href="index.html#pour-qui">Syndics</a></li></ul></div>
+        <div><h4>Ressources</h4><ul><li><a href="index.html#faq">Questions fréquentes</a></li><li><a href="index.html#demo">Demander une démo</a></li><li><a href="design-system.html">Design system</a></li></ul></div>
+      </div>
+      <div class="site-footer__bottom"><span>© <span data-year>2026</span> Immo+ — nom provisoire</span><span>Fait avec soin pour l’immobilier africain</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/feature.js"></script>
+</body>
+</html>

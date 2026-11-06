@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Immo+ — Design tokens
+   Source de vérité unique : toutes les couleurs, tailles, espacements,
+   ombres et animations passent par ces variables CSS.
+   Palette fournie : #bc6c25 · #dda15e · #fefae0 · #283618 · #606c38
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- 1. Palette de base (les 5 couleurs de la marque) ---------- */
+  --cream: #fefae0;       /* Crème   — fond de page, surfaces claires        */
+  --forest: #283618;      /* Forêt   — texte, boutons primaires, zones sombres */
+  --terracotta: #bc6c25;  /* Terracotta — accent, appels visuels, données clés */
+  --olive: #606c38;       /* Olive   — secondaire, succès, texte atténué       */
+  --sand: #dda15e;        /* Sable   — chaleur, surlignages, avertissements    */
+
+  /* ---------- 2. Échelles (générées à partir des 5 couleurs) ---------- */
+  --cream-50: #fffef6;
+  --cream-100: #fefae0;
+  --cream-200: #f7f0cb;
+  --cream-300: #ece3b1;
+
+  --forest-50: #e7e7de;
+  --forest-100: #dbdbd1;
+  --forest-200: #c1c4b6;
+  --forest-300: #a8ac9c;
+  --forest-400: #8e9581;
+  --forest-500: #757d67;
+  --forest-600: #5b654d;
+  --forest-700: #424e32;
+  --forest-800: #283618;
+  --forest-900: #212d14;
+
+  --olive-50: #eaeadd;
+  --olive-100: #dedfce;
+  --olive-200: #c5c8b0;
+  --olive-300: #acb192;
+  --olive-400: #929a74;
+  --olive-500: #798356;
+  --olive-600: #606c38;
+  --olive-700: #545f31;
+  --olive-800: #48522a;
+  --olive-900: #3b4523;
+
+  --terracotta-50: #f6eadb;
+  --terracotta-100: #f1dfca;
+  --terracotta-200: #e6c8a9;
+  --terracotta-300: #dcb188;
+  --terracotta-400: #d19a67;
+  --terracotta-500: #c78346;
+  --terracotta-600: #bc6c25;
+  --terracotta-700: #a15f21;
+  --terracotta-800: #87521d;
+  --terracotta-900: #6c4518;
+
+  --sand-50: #f9eddc;
+  --sand-100: #f5e3ca;
+  --sand-200: #edcda6;
+  --sand-300: #e5b782;
+  --sand-400: #dda15e;
+  --sand-500: #c89355;
+  --sand-600: #b3854d;
+  --sand-700: #9e7744;
+  --sand-800: #89683b;
+  --sand-900: #745a33;
+
+  /* Extension fonctionnelle (hors palette de marque) : états d'erreur / info */
+  --red-600: #b3342a;
+  --red-100: #f6dcd6;
+  --red-800: #8a261e;
+  --teal-600: #2f6b6b;
+  --teal-100: #d9e7e3;
+  --teal-800: #214f4f;
+
+  /* ---------- 3. Tokens sémantiques (à utiliser dans les composants) ---------- */
+  --bg: var(--cream-100);               /* fond de page */
+  --surface: var(--cream-50);           /* cartes, champs, panneaux */
+  --surface-sunken: var(--cream-200);   /* zones en retrait */
+  --surface-inverse: var(--forest-800); /* sections sombres */
+
+  --text: var(--forest-800);            /* texte courant */
+  --text-strong: var(--forest-900);     /* titres */
+  --text-muted: var(--olive-600);       /* texte secondaire (5,4:1 sur crème) */
+  --text-subtle: var(--forest-500);     /* placeholders, désactivé */
+  --text-on-dark: var(--cream-100);
+  --text-on-dark-muted: rgb(254 250 224 / 0.72);
+
+  --border: rgb(40 54 24 / 0.14);
+  --border-strong: rgb(40 54 24 / 0.3);
+  --border-on-dark: rgb(254 250 224 / 0.16);
+
+  --primary: var(--forest-800);
+  --primary-hover: var(--forest-700);
+  --accent: var(--terracotta-600);      /* fonds, icônes, graphiques */
+  --accent-text: var(--terracotta-700); /* texte accent sur clair (≥ 4,5:1) */
+  --highlight: var(--sand-400);
+
+  --success: var(--olive-600);
+  --success-bg: var(--olive-100);
+  --success-text: var(--olive-800);
+  --warning: var(--sand-400);
+  --warning-bg: var(--sand-100);
+  --warning-text: var(--sand-900);
+  --danger: var(--red-600);
+  --danger-bg: var(--red-100);
+  --danger-text: var(--red-800);
+  --info: var(--teal-600);
+  --info-bg: var(--teal-100);
+  --info-text: var(--teal-800);
+
+  --focus-ring: 0 0 0 4px rgb(188 108 37 / 0.28);
+
+  /* ---------- 4. Dégradés ---------- */
+  --grad-warm: linear-gradient(135deg, var(--sand-100), var(--terracotta-50));
+  --grad-olive: linear-gradient(135deg, var(--olive-100), var(--sand-50));
+  --grad-terracotta: linear-gradient(135deg, var(--terracotta-100), var(--sand-50));
+  --grad-sand: linear-gradient(135deg, var(--sand-200), var(--olive-50));
+  --grad-dark: linear-gradient(160deg, var(--forest-900), var(--forest-800) 55%, #33451d);
+
+  /* ---------- 5. Typographie ---------- */
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+  --fs-xs: 0.75rem;     /* 12 */
+  --fs-sm: 0.875rem;    /* 14 */
+  --fs-base: 1rem;      /* 16 */
+  --fs-lg: 1.125rem;    /* 18 */
+  --fs-xl: 1.25rem;     /* 20 */
+  --fs-2xl: 1.5rem;     /* 24 */
+  --fs-3xl: clamp(1.75rem, 1.4rem + 1.1vw, 2.25rem);   /* 28 → 36 */
+  --fs-4xl: clamp(2.125rem, 1.6rem + 1.9vw, 3rem);     /* 34 → 48 */
+  --fs-display: clamp(2.5rem, 1.5rem + 4.2vw, 4.25rem);/* 40 → 68 */
+
+  --lh-tight: 1.04;
+  --lh-snug: 1.2;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.7;
+
+  --tracking-display: -0.04em;
+  --tracking-heading: -0.03em;
+  --tracking-normal: 0;
+  --tracking-eyebrow: 0.14em;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ---------- 6. Espacement (base 4 px) ---------- */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4  */
+  --space-2: 0.5rem;   /* 8  */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.25rem;  /* 20 */
+  --space-6: 1.5rem;   /* 24 */
+  --space-8: 2rem;     /* 32 */
+  --space-10: 2.5rem;  /* 40 */
+  --space-12: 3rem;    /* 48 */
+  --space-16: 4rem;    /* 64 */
+  --space-20: 5rem;    /* 80 */
+  --space-24: 6rem;    /* 96 */
+  --space-32: 8rem;    /* 128 */
+
+  --gutter: clamp(1.25rem, 4vw, 2rem);
+  --section-y: clamp(4.5rem, 9vw, 8rem);
+
+  /* ---------- 7. Mise en page ---------- */
+  --container: 67.5rem;
+  --container-narrow: 45rem;
+  --container-wide: 80rem;
+  --header-h: 4.25rem;
+  --sidebar-w: 17rem;
+  /* Points de rupture (à copier dans les @media) : sm 640 · md 768 · lg 1024 · xl 1280 */
+
+  /* ---------- 8. Rayons ---------- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---------- 9. Ombres (teintées forêt, jamais noires) ---------- */
+  --shadow-xs: 0 1px 2px rgb(40 54 24 / 0.06);
+  --shadow-sm: 0 1px 3px rgb(40 54 24 / 0.09), 0 1px 2px rgb(40 54 24 / 0.05);
+  --shadow-md: 0 6px 16px -4px rgb(40 54 24 / 0.13), 0 2px 6px -2px rgb(40 54 24 / 0.07);
+  --shadow-lg: 0 18px 40px -12px rgb(40 54 24 / 0.24), 0 6px 14px -6px rgb(40 54 24 / 0.1);
+  --shadow-xl: 0 32px 64px -16px rgb(40 54 24 / 0.32);
+
+  /* ---------- 10. Mouvement ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in: cubic-bezier(0.5, 0, 0.75, 0);
+  --dur-instant: 90ms;
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 480ms;
+  --dur-slower: 800ms;
+  --dur-ambient: 6s;
+
+  /* ---------- 11. Couches (z-index) ---------- */
+  --z-base: 1;
+  --z-sticky: 50;
+  --z-dropdown: 80;
+  --z-overlay: 100;
+  --z-modal: 110;
+  --z-toast: 120;
+}

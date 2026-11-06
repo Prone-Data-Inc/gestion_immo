@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tableau de bord — Immo+</title>
+  <meta name="theme-color" content="#283618">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23283618'/%3E%3Cpath d='M7 15.2 16 7.8l9 7.4M9.8 14.2V24h12.4v-9.8' fill='none' stroke='%23fefae0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 17.2v4.6M13.7 19.5h4.6' stroke='%23dda15e' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="app-body">
+  <script src="assets/js/icons.js"></script>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#606c38" stop-opacity=".25"/><stop offset="1" stop-color="#606c38" stop-opacity="0"/></linearGradient></defs></svg>
+
+  <div class="app" id="app">
+    <!-- ============================== BARRE LATÉRALE ============================== -->
+    <aside class="sidebar" id="sidebar" aria-label="Navigation principale">
+      <a class="logo" href="index.html"><svg class="logo__svg" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Immo<b>+</b></span></a>
+      <nav class="side-group" aria-label="Principal">
+        <span class="side-group__title">Principal</span>
+        <a class="side-link" href="dashboard.html" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-dashboard"/></svg>Tableau de bord</a>
+        <a class="side-link" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Biens et lots <span class="badge">124</span></a>
+        <a class="side-link" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Locataires</a>
+        <a class="side-link" href="fonctionnalites.html"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>Loyers et paiements <span class="badge">14</span></a>
+        <a class="side-link" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg>Travaux <span class="badge">3</span></a>
+        <a class="side-link" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Contrats</a>
+      </nav>
+      <nav class="side-group" aria-label="Pilotage">
+        <span class="side-group__title">Pilotage</span>
+        <a class="side-link" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>Rapports</a>
+        <a class="side-link" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Assistant IA</a>
+        <a class="side-link" href="design-system.html"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>Design system</a>
+      </nav>
+      <div class="side-plan">
+        <strong>124 biens sur 150</strong>
+        Il vous reste 26 biens avant de changer de formule.
+        <div class="progress"><div class="progress__bar" style="--value:83%"></div></div>
+      </div>
+    </aside>
+    <div class="app__scrim" data-nav-close></div>
+
+    <div class="app__main">
+      <!-- ============================== BARRE DU HAUT ============================== -->
+      <header class="topbar">
+        <button class="btn btn--ghost btn--icon btn--sm topbar__menu" type="button" aria-label="Ouvrir le menu" data-nav-toggle><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+        <div class="topbar__search control-icon">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <input class="control" type="search" placeholder="Rechercher un bien, un locataire…" aria-label="Rechercher" id="global-search">
+        </div>
+        <div class="topbar__right">
+          <label class="sr-only" for="portfolio">Portefeuille</label>
+          <select class="control select-portfolio" id="portfolio">
+            <option value="all">Tous les sites</option>
+            <option value="abj">Abidjan</option>
+            <option value="dkr">Dakar</option>
+            <option value="dla">Douala</option>
+          </select>
+          <button class="btn btn--ghost btn--icon btn--sm notif-dot" type="button" aria-label="Notifications (3)" id="bell"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg></button>
+          <div class="dropdown dropdown--right" data-dropdown>
+            <button class="user-btn" type="button" aria-haspopup="menu" aria-expanded="false" data-dropdown-toggle><span class="avatar avatar--forest">AD</span><span class="name">Aminata D.</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+            <div class="dropdown__menu" role="menu" style="min-width:14rem">
+              <div style="padding:.6rem .75rem .5rem"><strong style="display:block;font-size:var(--fs-sm)">Aminata Diallo</strong><span class="text-muted t-xs">Agence Horizon Immo</span></div>
+              <hr style="margin:.25rem 0">
+              <a class="dropdown__item" role="menuitem" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Mon profil</a>
+              <a class="dropdown__item" role="menuitem" href="#" data-soon><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg>Paramètres</a>
+              <a class="dropdown__item" role="menuitem" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-logout"/></svg>Se déconnecter</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="app__content" id="main" data-loading>
+        <!-- ============================== EN-TÊTE DE PAGE ============================== -->
+        <div class="page-head">
+          <div>
+            <h1>Bonjour Aminata</h1>
+            <p><span data-today></span> · <span id="scope-label">Tous les sites</span></p>
+          </div>
+          <div class="page-head__actions">
+            <div class="segmented" role="radiogroup" aria-label="Période">
+              <label><input type="radio" name="period" value="30j" checked><span>30 jours</span></label>
+              <label><input type="radio" name="period" value="90j"><span>3 mois</span></label>
+              <label><input type="radio" name="period" value="12m"><span>12 mois</span></label>
+            </div>
+            <button class="btn btn--secondary btn--sm" type="button" id="export-btn"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Exporter</button>
+            <button class="btn btn--primary btn--sm" type="button" data-modal-open="modal-bien"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Ajouter un bien</button>
+          </div>
+        </div>
+
+        <!-- ============================== KPI ============================== -->
+        <section class="kpis" aria-label="Indicateurs clés">
+          <article class="kpi">
+            <div class="kpi__top"><span class="kpi__label">Loyers encaissés</span><span class="icon-tile icon-tile--olive"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span></div>
+            <div class="kpi__value sk"><span data-kpi="encaisse">48,2</span><small>M FCFA</small></div>
+            <div class="kpi__foot"><span class="delta delta--up sk" data-delta="encaisse">+8,4 %</span><span>vs période précédente</span></div>
+            <svg class="kpi__spark" viewBox="0 0 88 36" data-spark="encaisse" aria-hidden="true"></svg>
+          </article>
+          <article class="kpi">
+            <div class="kpi__top"><span class="kpi__label">Taux d’occupation</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span></div>
+            <div class="kpi__value sk"><span data-kpi="occ">92,3</span><small>%</small></div>
+            <div class="kpi__foot"><span class="delta delta--up sk" data-delta="occ">+1,8 pt</span><span>11 lots vacants</span></div>
+            <svg class="kpi__spark" viewBox="0 0 88 36" data-spark="occ" aria-hidden="true"></svg>
+          </article>
+          <article class="kpi kpi--warn">
+            <div class="kpi__top"><span class="kpi__label">Impayés</span><span class="icon-tile icon-tile--terracotta"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span></div>
+            <div class="kpi__value sk"><span data-kpi="impayes">3,1</span><small>M FCFA</small></div>
+            <div class="kpi__foot"><span class="delta delta--up sk" data-delta="impayes"><svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>12 %</span><span>14 locataires concernés</span></div>
+            <svg class="kpi__spark" viewBox="0 0 88 36" data-spark="impayes" aria-hidden="true"></svg>
+          </article>
+          <article class="kpi">
+            <div class="kpi__top"><span class="kpi__label">Taux de recouvrement</span><span class="icon-tile icon-tile--forest"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg></span></div>
+            <div class="kpi__value sk"><span data-kpi="rec">94,1</span><small>%</small></div>
+            <div class="kpi__foot"><span class="delta delta--up sk" data-delta="rec">+2,3 pts</span><span>objectif 95 %</span></div>
+            <svg class="kpi__spark" viewBox="0 0 88 36" data-spark="rec" aria-hidden="true"></svg>
+          </article>
+        </section>
+
+        <div class="dash-grid">
+          <!-- ============================== GRAPHIQUE LOYERS ============================== -->
+          <section class="panel span-8" aria-labelledby="t-rev">
+            <div class="panel__head">
+              <div><h2 class="panel__title" id="t-rev">Loyers encaissés vs attendus</h2><p class="panel__sub" id="rev-sub">En millions de FCFA, par semaine</p></div>
+              <div class="legend"><span><i style="--c:var(--forest-800)"></i>Encaissé</span><span><i style="--c:var(--sand-200)"></i>Attendu</span></div>
+            </div>
+            <div class="chart sk" id="chart-rev" role="img" aria-label="Histogramme des loyers encaissés et attendus"></div>
+          </section>
+
+          <!-- ============================== SUGGESTIONS IA ============================== -->
+          <section class="panel panel--dark span-4" aria-labelledby="t-ai">
+            <div class="panel__head">
+              <div><span class="ai-label"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>L’IA propose</span><h2 class="panel__title mt-2" id="t-ai">À valider aujourd’hui</h2><p class="panel__sub">Vous gardez la main : rien ne part sans votre accord.</p></div>
+            </div>
+            <div id="ai-list">
+              <div class="suggest-wrap"><div><div class="suggest">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></span>
+                <div><strong>Relancer 6 locataires en retard sur WhatsApp</strong><p>Message poli, avec lien de paiement Mobile Money.</p></div>
+                <div class="suggest__actions"><button class="btn btn--light btn--sm" data-ai="ok" data-msg="6 relances programmées" data-text="Envoi à 9 h demain matin.">Valider</button><button class="btn btn--outline-light btn--sm" data-ai="no">Ignorer</button></div>
+              </div></div></div>
+              <div class="suggest-wrap"><div><div class="suggest">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-trend-up"/></svg></span>
+                <div><strong>Réviser le loyer de la Villa Angré (+6 %)</strong><p>Le loyer est 6 % sous le marché du quartier.</p></div>
+                <div class="suggest__actions"><button class="btn btn--light btn--sm" data-ai="ok" data-msg="Révision préparée" data-text="Courrier au locataire en brouillon.">Valider</button><button class="btn btn--outline-light btn--sm" data-ai="no">Ignorer</button></div>
+              </div></div></div>
+              <div class="suggest-wrap"><div><div class="suggest">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+                <div><strong>Planifier la remise en état de l’Apt B12</strong><p>Lot libre le 15 déc. : repeinture et plomberie à prévoir.</p></div>
+                <div class="suggest__actions"><button class="btn btn--light btn--sm" data-ai="ok" data-msg="Travaux planifiés" data-text="2 devis demandés à vos artisans.">Valider</button><button class="btn btn--outline-light btn--sm" data-ai="no">Ignorer</button></div>
+              </div></div></div>
+              <div class="empty" id="ai-empty" hidden style="color:var(--text-on-dark-muted)">
+                <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg></span>
+                <h4 style="color:var(--cream-100)">Tout est à jour</h4><p>De nouvelles suggestions arriveront demain.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================== OCCUPATION ============================== -->
+          <section class="panel span-4" aria-labelledby="t-occ">
+            <div><h2 class="panel__title" id="t-occ">Occupation du parc</h2><p class="panel__sub">Répartition des lots</p></div>
+            <div class="donut-wrap">
+              <div class="donut sk" role="img" aria-label="Taux d’occupation">
+                <svg viewBox="0 0 120 120" id="donut-svg"><circle cx="60" cy="60" r="48" stroke="var(--forest-100)"/></svg>
+                <div class="donut__center"><strong id="donut-val">92%</strong><span>occupés</span></div>
+              </div>
+              <ul class="donut-legend" id="donut-legend"></ul>
+            </div>
+          </section>
+
+          <!-- ============================== MODES DE PAIEMENT ============================== -->
+          <section class="panel span-4" aria-labelledby="t-pay">
+            <div><h2 class="panel__title" id="t-pay">Modes de paiement</h2><p class="panel__sub">Part des loyers encaissés</p></div>
+            <div class="hbars" id="hbars"></div>
+          </section>
+
+          <!-- ============================== BAUX À ÉCHÉANCE ============================== -->
+          <section class="panel span-4" aria-labelledby="t-bail">
+            <div class="panel__head"><div><h2 class="panel__title" id="t-bail">Baux à renouveler</h2><p class="panel__sub">Dans les 90 prochains jours</p></div><span class="badge badge--warning">4</span></div>
+            <ul class="list">
+              <li class="list__item"><span class="avatar avatar--terracotta">KY</span><div><strong>Villa Angré · Cocody</strong><span>Kouassi Yao</span></div><div class="end"><span class="badge badge--danger">12 j</span></div></li>
+              <li class="list__item"><span class="avatar avatar--olive">FS</span><div><strong>Apt 3B · Almadies</strong><span>Fatou Sow</span></div><div class="end"><span class="badge badge--warning">34 j</span></div></li>
+              <li class="list__item"><span class="avatar">JM</span><div><strong>Studio · Bonanjo</strong><span>Jean-Marc Mbarga</span></div><div class="end"><span class="badge badge--warning">58 j</span></div></li>
+              <li class="list__item"><span class="avatar avatar--olive">IK</span><div><strong>Rés. Les Palmiers</strong><span>Ibrahim Koné</span></div><div class="end"><span class="badge badge--info">81 j</span></div></li>
+            </ul>
+            <a class="btn btn--link btn--sm" href="#" data-soon style="margin-top:auto">Voir tous les contrats <svg class="icon icon--arrow" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+          </section>
+
+          <!-- ============================== LOYERS EN RETARD ============================== -->
+          <section class="panel span-8" aria-labelledby="t-late">
+            <div class="panel__head">
+              <div><h2 class="panel__title" id="t-late">Loyers en retard</h2><p class="panel__sub" id="late-sub">Triés par ancienneté</p></div>
+              <div class="toolbar">
+                <div class="filters" role="group" aria-label="Filtrer par retard" id="late-filters">
+                  <button class="chip is-active" data-f="all" aria-pressed="true">Tous</button>
+                  <button class="chip" data-f="crit" aria-pressed="false">+ 30 j</button>
+                  <button class="chip" data-f="mid" aria-pressed="false">15–30 j</button>
+                  <button class="chip" data-f="low" aria-pressed="false">- 15 j</button>
+                </div>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Locataire et bien</th><th class="num">Montant dû</th><th>Retard</th><th>Statut</th><th><span class="sr-only">Action</span></th></tr></thead>
+                <tbody id="late-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ============================== ACTIVITÉ ============================== -->
+          <section class="panel span-4" aria-labelledby="t-act">
+            <div><h2 class="panel__title" id="t-act">Activité récente</h2><p class="panel__sub">En direct</p></div>
+            <ol class="timeline" id="timeline">
+              <li><strong>Paiement Wave reçu</strong> — Awa T., 250 000 FCFA<time>Il y a 12 min</time></li>
+              <li class="is-alert"><strong>Loyer en retard</strong> — Mariam C., Mermoz<time>Il y a 1 h</time></li>
+              <li><strong>Quittance envoyée</strong> — Ibrahim K.<time>Il y a 2 h</time></li>
+              <li><strong>Devis reçu</strong> — plomberie, Rés. Les Palmiers<time>Hier, 16:20</time></li>
+              <li><strong>Nouveau bail signé</strong> — Studio Bonanjo<time>Hier, 10:05</time></li>
+            </ol>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ============================== MODALE : AJOUTER UN BIEN ============================== -->
+  <dialog class="modal" id="modal-bien" aria-labelledby="mb-title">
+    <div class="modal__panel">
+      <form data-validate id="form-bien" data-success-toast="Bien ajouté" data-success-text="Il apparaît dans votre portefeuille.">
+        <div class="modal__head">
+          <div><h2 id="mb-title" class="t-h3" style="font-size:var(--fs-2xl)">Ajouter un bien</h2><p class="text-muted t-small mt-2">Quelques informations suffisent, vous compléterez plus tard.</p></div>
+          <button class="btn btn--ghost btn--icon btn--sm" type="button" data-modal-close aria-label="Fermer"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="modal__body form">
+          <fieldset class="fieldset"><legend>Type de bien</legend>
+            <div class="grid" style="--gap:.6rem;grid-template-columns:repeat(3,1fr)">
+              <label class="choice"><input type="radio" name="type" value="appartement" checked><span class="choice__body"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><strong>Appartement</strong></span></label>
+              <label class="choice"><input type="radio" name="type" value="villa"><span class="choice__body"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><strong>Villa</strong></span></label>
+              <label class="choice"><input type="radio" name="type" value="local"><span class="choice__body"><svg class="icon" aria-hidden="true"><use href="#i-door"/></svg><strong>Local pro</strong></span></label>
+            </div>
+          </fieldset>
+          <div class="field"><label class="field__label" for="b-nom">Nom du bien <span class="req">*</span></label><input class="control" id="b-nom" required placeholder="Ex. Apt B12 — Résidence Les Palmiers"><p class="field__error"></p></div>
+          <div class="form__row form__row--2">
+            <div class="field"><label class="field__label" for="b-ville">Ville</label><select class="control" id="b-ville"><option>Abidjan</option><option>Dakar</option><option>Douala</option><option>Libreville</option><option>Kinshasa</option></select></div>
+            <div class="field"><label class="field__label" for="b-loyer">Loyer mensuel <span class="req">*</span></label>
+              <div class="affix"><input class="control num" id="b-loyer" required inputmode="numeric" pattern="[0-9\s]+" title="Saisissez un montant en chiffres, par exemple 250000" placeholder="250 000"><span class="affix__add">FCFA</span></div><p class="field__error"></p></div>
+          </div>
+          <div class="form__row form__row--2">
+            <div class="field"><span class="field__label">Nombre de pièces</span><div class="stepper"><button type="button" aria-label="Moins">−</button><input type="number" value="3" min="1" max="20" aria-label="Nombre de pièces"><button type="button" aria-label="Plus">+</button></div></div>
+            <div class="field"><span class="field__label">Disponibilité</span><label class="switch" style="margin-top:.35rem"><input type="checkbox" role="switch" checked><span>Disponible à la location</span></label></div>
+          </div>
+        </div>
+        <div class="modal__foot">
+          <button class="btn btn--ghost" type="button" data-modal-close>Annuler</button>
+          <button class="btn btn--primary" type="submit">Ajouter le bien</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
